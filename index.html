@@ -660,9 +660,12 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
   .hero{padding:5.5rem max(16px,5%) 3rem}
   .cta{padding:4rem max(16px,5%)}
   footer{padding:4rem max(16px,5%) 2rem}
-  /* Hide decorative overflow images on small mobile */
+  /* About: stack image above text, image takes full width */
+  .about-grid{grid-template-columns:1fr;gap:2rem}
+  .ai-wrap{max-width:100%}
+  .ai1{aspect-ratio:16/9}
   .ai2{display:none}
-  .about-grid{gap:2rem}
+  .ai-badge{top:.75rem;left:.75rem}
 }
 @media(max-width:480px){
   .hero h1{font-size:2.6rem}
