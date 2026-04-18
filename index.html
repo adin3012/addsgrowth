@@ -3,7 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AddsGrowth. | We Build. You Grow.</title>
+<title>AddsGrowth | Professional Web Design & SEO Agency | We Build. You Grow.</title>
+<meta name="description" content="AddsGrowth builds professional, high-converting websites for businesses across the USA, UAE, Australia & beyond. Custom web design, SEO setup, and booking integrations from $499. Live in 7 days.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="web design, web development, SEO, landing pages, small business website, USA, UAE, Australia">
+<meta name="author" content="AddsGrowth">
+<link rel="canonical" href="https://addsgrowth.org/">
+<meta name="theme-color" content="#0a0a0a">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://addsgrowth.org/">
+<meta property="og:title" content="AddsGrowth | Professional Web Design & SEO Agency">
+<meta property="og:description" content="We build professional, high-converting websites for businesses across the USA, UAE, Australia & beyond. Custom design, SEO & booking integrations from $499. Live in 7 days.">
+<meta property="og:image" content="https://addsgrowth.org/og-image.jpg">
+<meta property="og:site_name" content="AddsGrowth">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AddsGrowth | We Build. You Grow.">
+<meta name="twitter:description" content="Professional websites for businesses across the USA, UAE, Australia & beyond. Custom web design, SEO & booking integrations from $499. Live in 7 days.">
+<meta name="twitter:image" content="https://addsgrowth.org/og-image.jpg">
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AddsGrowth",
+  "url": "https://addsgrowth.org",
+  "email": "contact@addsgrowth.org",
+  "telephone": "+918638740815",
+  "description": "Professional web design and SEO agency building high-converting websites for businesses worldwide.",
+  "areaServed": ["US", "AE", "AU", "IN", "GB"],
+  "priceRange": "$499 - $1999",
+  "currenciesAccepted": "USD",
+  "serviceType": ["Web Design", "SEO", "Web Development", "Landing Pages"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "40",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Starter Website Package",
+      "price": "499",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Growth Website Package",
+      "price": "999",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium Website Package",
+      "price": "1999",
+      "priceCurrency": "USD"
+    }
+  ]
+}
+</script>
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='700' fill='%233d9970'%3EA%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +111,24 @@ body{font-family:var(--sans);background:var(--bg);color:var(--wh);overflow-x:hid
 a{color:inherit;text-decoration:none}
 img{display:block}
 
+/* SKIP LINK */
+.skip-link{
+  position:absolute;top:-100%;left:1rem;
+  background:var(--green);color:#000;
+  padding:.5rem 1rem;border-radius:var(--r8);
+  font-size:.85rem;font-weight:700;z-index:9999;
+  transition:top .2s;
+}
+.skip-link:focus{top:1rem}
+
+/* FOCUS VISIBLE */
+:focus-visible{
+  outline:2px solid var(--green);
+  outline-offset:3px;
+  border-radius:var(--r4);
+}
+button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+
 /* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
@@ -76,8 +160,15 @@ nav.pinned{background:rgba(10,10,10,.95);border-color:var(--ln);backdrop-filter:
 }
 .nav-cta:hover{background:#252525;border-color:#3a3a3a;color:#fff}
 
-.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.ham{
+  display:none;flex-direction:column;gap:5px;cursor:pointer;
+  padding:8px;background:none;border:none;
+  border-radius:var(--r8);
+}
 .ham span{display:block;width:22px;height:1.5px;background:var(--wh);transition:all .3s}
+.ham[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.ham[aria-expanded="true"] span:nth-child(2){opacity:0}
+.ham[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
 
 /* MOBILE DRAWER */
 .drawer{
@@ -86,7 +177,11 @@ nav.pinned{background:rgba(10,10,10,.95);border-color:var(--ln);backdrop-filter:
   align-items:center;justify-content:center;gap:2rem;
 }
 .drawer.open{display:flex}
-.drawer-x{position:absolute;top:1.5rem;right:5%;font-size:1.4rem;color:var(--mu);background:none;border:none;cursor:pointer;line-height:1}
+.drawer-x{
+  position:absolute;top:1.5rem;right:5%;font-size:1.4rem;color:var(--mu);
+  background:none;border:none;cursor:pointer;line-height:1;
+  padding:.4rem .6rem;border-radius:var(--r8);
+}
 .drawer a{font-size:1.8rem;font-weight:700;color:var(--wh);transition:color .2s}
 .drawer a:hover{color:var(--green)}
 .drawer .d-cta{
@@ -350,8 +445,11 @@ nav.pinned{background:rgba(10,10,10,.95);border-color:var(--ln);backdrop-filter:
   gap:1px;background:var(--ln);
   border:1px solid var(--ln);border-radius:var(--r12);overflow:hidden;
 }
-.port-col{display:flex;flex-direction:column;gap:1px;background:var(--ln)}
-.pi{position:relative;overflow:hidden;background:var(--surf);cursor:pointer;cursor:pointer}
+.pi{
+  position:relative;overflow:hidden;background:var(--surf);
+  cursor:pointer;
+}
+.pi:focus-visible{outline:2px solid var(--green);outline-offset:2px;z-index:1}
 .pi img,.pi video{
   width:100%;aspect-ratio:16/9;object-fit:cover;display:block;
   filter:grayscale(20%) brightness(.75);transition:filter .5s,transform .5s;
@@ -481,15 +579,27 @@ nav.pinned{background:rgba(10,10,10,.95);border-color:var(--ln);backdrop-filter:
   transition:border-color .2s;
 }
 .fl-input:focus{border-color:rgba(61,153,112,.4)}
+.fl-input:focus-visible{outline:none;border-color:rgba(61,153,112,.6)}
 .fl-input::placeholder{color:var(--mu2)}
+.fl-input.err{border-color:rgba(239,68,68,.5)}
+.fl-err{font-family:var(--mono);font-size:.6rem;color:#ef4444;margin-top:-.55rem;margin-bottom:.85rem;display:none}
+.fl-err.show{display:block}
 .fl-submit{
   width:100%;padding:.88rem;background:var(--green);color:#000;
   font-family:var(--sans);font-size:.78rem;font-weight:700;
   letter-spacing:.06em;text-transform:uppercase;
   border:none;border-radius:var(--r8);cursor:pointer;
-  transition:background .2s;
+  transition:background .2s;position:relative;
 }
-.fl-submit:hover{background:var(--green2)}
+.fl-submit:hover:not(:disabled){background:var(--green2)}
+.fl-submit:disabled{opacity:.6;cursor:not-allowed}
+.fl-submit .fl-spinner{
+  display:none;width:14px;height:14px;border:2px solid rgba(0,0,0,.3);
+  border-top-color:#000;border-radius:50%;animation:spin .6s linear infinite;
+  position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+}
+.fl-submit.loading .fl-spinner{display:block}
+@keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
 .fl-note{font-family:var(--mono);font-size:.6rem;color:var(--mu2);text-align:center;margin-top:.65rem}
 .fl-ok{display:none;text-align:center;padding:2rem 1rem;font-size:.9rem;color:var(--green)}
 .fl-ok-ic{font-size:2rem;display:block;margin-bottom:.5rem}
@@ -526,45 +636,61 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
   .stt:nth-child(2){border-right:none}
   .stt:nth-child(3){border-top:1px solid var(--ln)}
   .svc-grid{grid-template-columns:repeat(2,1fr)}
-  .proc-grid{grid-template-columns:repeat(2,1fr)}
   .port-grid{grid-template-columns:1fr}
   .pi:first-child img,.pi img,.pi video{aspect-ratio:16/9}
-  .port-col{gap:1px}
   .price-grid{grid-template-columns:1fr}
-  .testimonials-grid{grid-template-columns:1fr}
-  .cta{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:repeat(2,1fr)}
+  .cta{grid-template-columns:1fr;gap:3rem}
   .ft{grid-template-columns:1fr 1fr;gap:2.5rem}
+  /* About: clip overflow so ai2/ai-badge don't escape container */
+  .ai-wrap{overflow:hidden;border-radius:var(--r12)}
+  .ai2{right:1rem;bottom:1rem;width:35%}
+  .ai-badge{left:1rem}
 }
 @media(max-width:720px){
   .nav-links,.nav-end{display:none}
   .ham{display:flex}
   .svc-grid{grid-template-columns:1fr}
-  .proc-grid{grid-template-columns:1fr}
-  .sec{padding:4rem 5%}
+  .sec{padding:4rem max(16px,5%)}
   .stats{grid-template-columns:1fr 1fr}
-  .tc{min-width:260px}
+  .testimonials-grid{grid-template-columns:1fr}
   .ft{grid-template-columns:1fr}
   .ft-bot{flex-direction:column;text-align:center}
   .price-grid{grid-template-columns:1fr}
+  .hero{padding:5.5rem max(16px,5%) 3rem}
+  .cta{padding:4rem max(16px,5%)}
+  footer{padding:4rem max(16px,5%) 2rem}
+  /* Hide decorative overflow images on small mobile */
+  .ai2{display:none}
+  .about-grid{gap:2rem}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2.6rem}
+  .hero-desc{font-size:.92rem}
+  .stt-n{font-size:2.2rem}
+  .sh2{font-size:1.9rem}
 }
 </style>
 </head>
 <body>
 
+<!-- SKIP LINK -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <!-- MOBILE DRAWER -->
-<div class="drawer" id="drawer">
-  <button class="drawer-x" onclick="closeD()">✕</button>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="drawer-x" type="button" onclick="closeD()" aria-label="Close menu">✕</button>
   <a href="#" onclick="closeD()">Home</a>
   <a href="#about" onclick="closeD()">About</a>
   <a href="#services" onclick="closeD()">Services</a>
   <a href="#work" onclick="closeD()">Work</a>
   <a href="#pricing" onclick="closeD()">Pricing</a>
-  <a href="https://calendly.com/adin3012/free-consultation" target="_blank" class="d-cta" onclick="closeD()">Book a Call →</a>
+  <a href="https://calendly.com/adin3012/free-consultation" target="_blank" rel="noopener noreferrer" class="d-cta" onclick="closeD()">Book a Call →</a>
 </div>
 
 <!-- NAV -->
-<nav id="nav">
-  <a href="#" class="logo">AddsGrowth<span>.</span></a>
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#" class="logo" aria-label="AddsGrowth home">AddsGrowth<span>.</span></a>
 
   <div class="nav-links">
     <a class="nav-link active" href="#">Home</a>
@@ -575,20 +701,20 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
   </div>
 
   <div class="nav-end">
-    <a href="https://calendly.com/adin3012/free-consultation" target="_blank" class="nav-cta">Book a Call</a>
+    <a href="https://calendly.com/adin3012/free-consultation" target="_blank" rel="noopener noreferrer" class="nav-cta">Book a Call</a>
   </div>
-  <div class="ham" onclick="document.getElementById('drawer').classList.add('open')">
+  <button class="ham" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer" onclick="openDrawer(this)">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
+<section class="hero" id="main" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
 
   <div class="hero-left">
-    <div class="hero-pill"><span class="hero-pill-dot"></span>Websites · SEO · Growth</div>
+    <div class="hero-pill" aria-hidden="true"><span class="hero-pill-dot"></span>Websites · SEO · Growth</div>
     <h1>
       <span class="h1-block">We</span>
       <span class="h1-block h1-green">Build.</span>
@@ -598,23 +724,23 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
     <p class="hero-desc">Professional websites for businesses across the USA, UAE, Australia and beyond. More visibility. More clients. More revenue.</p>
     <div class="hero-btns">
       <a href="#pricing" class="btn-primary">See Pricing</a>
-      <a href="https://calendly.com/adin3012/free-consultation" target="_blank" class="btn-ghost">Book a Call</a>
+      <a href="https://calendly.com/adin3012/free-consultation" target="_blank" rel="noopener noreferrer" class="btn-ghost">Book a Call</a>
     </div>
     <div style="display:flex;align-items:center;gap:14px;margin-top:2.5rem;animation:up .6s .4s both;">
-      <div style="display:flex;">
+      <div style="display:flex;" aria-hidden="true">
         <div style="width:34px;height:34px;border-radius:50%;background:#22c55e20;color:#22c55e;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;border:2px solid var(--bg);margin-right:-8px;">S</div>
         <div style="width:34px;height:34px;border-radius:50%;background:#3b82f620;color:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;border:2px solid var(--bg);margin-right:-8px;">M</div>
         <div style="width:34px;height:34px;border-radius:50%;background:#a855f720;color:#a855f7;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;border:2px solid var(--bg);margin-right:-8px;">J</div>
         <div style="width:34px;height:34px;border-radius:50%;background:#f59e0b20;color:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;border:2px solid var(--bg);">R</div>
       </div>
       <div>
-        <div style="color:var(--green);font-size:.85rem;letter-spacing:2px;">★★★★★</div>
+        <div style="color:var(--green);font-size:.85rem;letter-spacing:2px;" aria-label="5 stars">★★★★★</div>
         <div style="font-size:.78rem;color:var(--mu);margin-top:2px;">Loved by 40+ clients worldwide</div>
       </div>
     </div>
   </div>
 
-  <div class="hero-right">
+  <div class="hero-right" aria-hidden="true">
     <div style="position:relative">
       <div class="float f1">
         <div class="fl">// response rate</div>
@@ -661,27 +787,27 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
 </section>
 
 <!-- STATS -->
-<div class="stats rv">
-  <div class="stt"><div class="stt-n"><span class="ctr" data-t="40">0</span><em>+</em></div><div class="stt-l">Projects Delivered</div><div class="stt-bar"></div></div>
-  <div class="stt" style="transition-delay:.08s"><div class="stt-n"><span class="ctr" data-t="5">0</span><em>+</em></div><div class="stt-l">Countries Served</div><div class="stt-bar"></div></div>
-  <div class="stt" style="transition-delay:.16s"><div class="stt-n"><span class="ctr" data-t="7">0</span><em> Days</em></div><div class="stt-l">Avg. Delivery</div><div class="stt-bar"></div></div>
-  <div class="stt" style="transition-delay:.24s"><div class="stt-n"><span class="ctr" data-t="100">0</span><em>%</em></div><div class="stt-l">Client Satisfaction</div><div class="stt-bar"></div></div>
+<div class="stats rv" role="region" aria-label="Key statistics">
+  <div class="stt"><div class="stt-n"><span class="ctr" data-t="40">0</span><em>+</em></div><div class="stt-l">Projects Delivered</div><div class="stt-bar" aria-hidden="true"></div></div>
+  <div class="stt" style="transition-delay:.08s"><div class="stt-n"><span class="ctr" data-t="5">0</span><em>+</em></div><div class="stt-l">Countries Served</div><div class="stt-bar" aria-hidden="true"></div></div>
+  <div class="stt" style="transition-delay:.16s"><div class="stt-n"><span class="ctr" data-t="7">0</span><em> Days</em></div><div class="stt-l">Avg. Delivery</div><div class="stt-bar" aria-hidden="true"></div></div>
+  <div class="stt" style="transition-delay:.24s"><div class="stt-n"><span class="ctr" data-t="100">0</span><em>%</em></div><div class="stt-l">Client Satisfaction</div><div class="stt-bar" aria-hidden="true"></div></div>
 </div>
 
 <!-- ABOUT -->
-<section class="sec s1 rv" id="about">
+<section class="sec s1 rv" id="about" aria-label="About AddsGrowth">
   <div class="about-grid">
     <div class="ai-wrap">
-      <img class="ai1" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80&fit=crop" alt="Studio">
-      <img class="ai2" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80&fit=crop" alt="Strategy">
-      <div class="ai-badge"><div class="aib-n">5★</div><div class="aib-t">Avg Rating</div></div>
+      <img class="ai1" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80&fit=crop" alt="Our studio workspace" loading="lazy">
+      <img class="ai2" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80&fit=crop" alt="Team strategy session" loading="lazy">
+      <div class="ai-badge" aria-hidden="true"><div class="aib-n">5★</div><div class="aib-t">Avg Rating</div></div>
     </div>
     <div>
       <div class="ey">About AddsGrowth</div>
       <h2 class="sh2">We don't do<br><em>cookie-cutter.</em></h2>
       <p class="sp" style="margin-bottom:1.1rem">AddsGrowth is a lean, focused agency built for one thing: turning small and medium businesses into serious online competitors. No bloated agencies, no generic templates — just sharp strategy, clean code, and results you can measure.</p>
       <p class="sp">Every client gets a site and an SEO roadmap designed specifically around their market. We've done it 40+ times across 5 countries, and we know exactly what moves the needle.</p>
-      <div class="tech">
+      <div class="tech" aria-label="Technologies we use">
         <span class="tt">Figma → Code</span><span class="tt">HTML/CSS</span>
         <span class="tt">React</span><span class="tt">Next.js</span>
         <span class="tt">Core Web Vitals</span><span class="tt">SEO</span>
@@ -692,7 +818,7 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
 </section>
 
 <!-- SERVICES -->
-<section class="sec rv" id="services">
+<section class="sec rv" id="services" aria-label="Our services">
   <div class="svc-head">
     <div>
       <div class="ey">What We Do</div>
@@ -701,17 +827,17 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
     <p class="sp" style="margin-bottom:0;max-width:38ch">From design to launch to growth — we handle the digital side so you can focus on your clients.</p>
   </div>
   <div class="svc-grid">
-    <div class="sc rv"><div class="sc-num">// 01</div><div class="sc-icon">🌐</div><div class="sc-name">Website Design & Development</div><div class="sc-desc">Clean, fast, mobile-first websites built to convert visitors into bookings. No templates. No cookie-cutter designs.</div><div class="sc-tags"><span class="sc-tag">Figma</span><span class="sc-tag">HTML/CSS</span><span class="sc-tag">React</span></div><div class="sc-arrow">→</div></div>
-    <div class="sc rv" style="transition-delay:.07s"><div class="sc-num">// 02</div><div class="sc-icon">📈</div><div class="sc-name">SEO Setup & Ranking</div><div class="sc-desc">We set up your site so Google can find you. Local SEO, meta tags, site speed optimization — everything to get you ranking.</div><div class="sc-tags"><span class="sc-tag">On-Page</span><span class="sc-tag">Technical</span><span class="sc-tag">Local</span></div><div class="sc-arrow">→</div></div>
-    <div class="sc rv" style="transition-delay:.14s"><div class="sc-num">// 03</div><div class="sc-icon">📍</div><div class="sc-name">Booking Integration</div><div class="sc-desc">Connect your site to your booking or scheduling system — Calendly, Square, or any platform you use.</div><div class="sc-tags"><span class="sc-tag">Calendly</span><span class="sc-tag">Square</span><span class="sc-tag">WhatsApp</span></div><div class="sc-arrow">→</div></div>
-    <div class="sc rv"><div class="sc-num">// 04</div><div class="sc-icon">📄</div><div class="sc-name">Landing Pages</div><div class="sc-desc">High-converting single pages for promotions, new services, or ad campaigns. Built fast, designed to get results.</div><div class="sc-tags"><span class="sc-tag">CRO</span><span class="sc-tag">Ads</span><span class="sc-tag">Lead Gen</span></div><div class="sc-arrow">→</div></div>
-    <div class="sc rv" style="transition-delay:.07s"><div class="sc-num">// 05</div><div class="sc-icon">🔄</div><div class="sc-name">Website Redesign</div><div class="sc-desc">Already have a website but it looks outdated? We redesign it from scratch — modern, fast, and built to represent your brand.</div><div class="sc-tags"><span class="sc-tag">UX</span><span class="sc-tag">Modern</span><span class="sc-tag">Fast</span></div><div class="sc-arrow">→</div></div>
-    <div class="sc rv" style="transition-delay:.14s"><div class="sc-num">// 06</div><div class="sc-icon">🔧</div><div class="sc-name">Ongoing Maintenance</div><div class="sc-desc">Updates, fixes, content changes — we handle it. Monthly retainers available so your site stays fresh without you lifting a finger.</div><div class="sc-tags"><span class="sc-tag">Security</span><span class="sc-tag">Support</span><span class="sc-tag">Updates</span></div><div class="sc-arrow">→</div></div>
+    <div class="sc rv"><div class="sc-num">// 01</div><div class="sc-icon" aria-hidden="true">🌐</div><div class="sc-name">Website Design & Development</div><div class="sc-desc">Clean, fast, mobile-first websites built to convert visitors into bookings. No templates. No cookie-cutter designs.</div><div class="sc-tags"><span class="sc-tag">Figma</span><span class="sc-tag">HTML/CSS</span><span class="sc-tag">React</span></div><div class="sc-arrow" aria-hidden="true">→</div></div>
+    <div class="sc rv" style="transition-delay:.07s"><div class="sc-num">// 02</div><div class="sc-icon" aria-hidden="true">📈</div><div class="sc-name">SEO Setup & Ranking</div><div class="sc-desc">We set up your site so Google can find you. Local SEO, meta tags, site speed optimization — everything to get you ranking.</div><div class="sc-tags"><span class="sc-tag">On-Page</span><span class="sc-tag">Technical</span><span class="sc-tag">Local</span></div><div class="sc-arrow" aria-hidden="true">→</div></div>
+    <div class="sc rv" style="transition-delay:.14s"><div class="sc-num">// 03</div><div class="sc-icon" aria-hidden="true">📍</div><div class="sc-name">Booking Integration</div><div class="sc-desc">Connect your site to your booking or scheduling system — Calendly, Square, or any platform you use.</div><div class="sc-tags"><span class="sc-tag">Calendly</span><span class="sc-tag">Square</span><span class="sc-tag">WhatsApp</span></div><div class="sc-arrow" aria-hidden="true">→</div></div>
+    <div class="sc rv"><div class="sc-num">// 04</div><div class="sc-icon" aria-hidden="true">📄</div><div class="sc-name">Landing Pages</div><div class="sc-desc">High-converting single pages for promotions, new services, or ad campaigns. Built fast, designed to get results.</div><div class="sc-tags"><span class="sc-tag">CRO</span><span class="sc-tag">Ads</span><span class="sc-tag">Lead Gen</span></div><div class="sc-arrow" aria-hidden="true">→</div></div>
+    <div class="sc rv" style="transition-delay:.07s"><div class="sc-num">// 05</div><div class="sc-icon" aria-hidden="true">🔄</div><div class="sc-name">Website Redesign</div><div class="sc-desc">Already have a website but it looks outdated? We redesign it from scratch — modern, fast, and built to represent your brand.</div><div class="sc-tags"><span class="sc-tag">UX</span><span class="sc-tag">Modern</span><span class="sc-tag">Fast</span></div><div class="sc-arrow" aria-hidden="true">→</div></div>
+    <div class="sc rv" style="transition-delay:.14s"><div class="sc-num">// 06</div><div class="sc-icon" aria-hidden="true">🔧</div><div class="sc-name">Ongoing Maintenance</div><div class="sc-desc">Updates, fixes, content changes — we handle it. Monthly retainers available so your site stays fresh without you lifting a finger.</div><div class="sc-tags"><span class="sc-tag">Security</span><span class="sc-tag">Support</span><span class="sc-tag">Updates</span></div><div class="sc-arrow" aria-hidden="true">→</div></div>
   </div>
 </section>
 
 <!-- PORTFOLIO -->
-<section class="sec s1 rv" id="work">
+<section class="sec s1 rv" id="work" aria-label="Our work portfolio">
   <div class="port-head">
     <div>
       <div class="ey">Our Work</div>
@@ -719,104 +845,104 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
     </div>
     <p class="sp" style="margin-bottom:0;max-width:38ch">Every project we build is designed to do one thing — grow your business.</p>
   </div>
-<div class="port-grid">
-    <div class="pi rv" onclick="window.open('https://getfitwithadin.com','_blank')">
+  <div class="port-grid">
+    <div class="pi rv" role="link" tabindex="0" aria-label="View GetFitWithAdin project" onclick="openProject('https://getfitwithadin.com')" onkeydown="handlePiKey(event,'https://getfitwithadin.com')">
       <div class="pi-chip">Fitness</div>
-      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&q=80&fit=crop" alt="GetFitWithAdin">
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&q=80&fit=crop" alt="GetFitWithAdin fitness coaching website" loading="lazy">
       <div class="po"><div class="po-tag">Coaching · WhatsApp</div><div class="po-name">GetFitWithAdin</div><div class="po-stat">getfitwithadin.com ↗</div></div>
     </div>
-    <div class="pi rv" onclick="window.open('https://himanshudeka.com','_blank')">
+    <div class="pi rv" role="link" tabindex="0" aria-label="View Himanshu Deka project" onclick="openProject('https://himanshudeka.com')" onkeydown="handlePiKey(event,'https://himanshudeka.com')">
       <div class="pi-chip">Coach</div>
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&fit=crop" alt="Himanshu Deka">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&fit=crop" alt="Himanshu Deka coaching portfolio website" loading="lazy">
       <div class="po"><div class="po-tag">Coach · Portfolio</div><div class="po-name">Himanshu Deka</div><div class="po-stat">himanshudeka.com ↗</div></div>
     </div>
-    <div class="pi rv" onclick="window.open('coachflow.mp4','_blank')">
+    <div class="pi rv" role="link" tabindex="0" aria-label="View CoachFlow demo" onclick="openProject('coachflow.mp4')" onkeydown="handlePiKey(event,'coachflow.mp4')">
       <div class="pi-chip">SaaS</div>
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&fit=crop" alt="CoachFlow">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&fit=crop" alt="CoachFlow SaaS CRM dashboard" loading="lazy">
       <div class="po"><div class="po-tag">CRM · Flask</div><div class="po-name">CoachFlow</div><div class="po-stat">Click to watch demo ↗</div></div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="sec rv" id="testimonials">
+<section class="sec rv" id="testimonials" aria-label="Client testimonials">
   <div class="sh">
     <div class="ey">What Clients Say</div>
     <h2 class="sh2">Don't Take<br><em>Our Word For It</em></h2>
     <p class="sp">Real feedback from real business owners across the USA and beyond.</p>
   </div>
   <div class="testimonials-grid">
-    <div class="tc">
-      <div class="tc-stars">★★★★★</div>
-      <div class="tc-q">"AddsGrowth built my portfolio website and it looks absolutely stunning. Fast delivery, clean design, and exactly what I needed to showcase my work professionally."</div>
+    <article class="tc">
+      <div class="tc-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote class="tc-q">"AddsGrowth built my portfolio website and it looks absolutely stunning. Fast delivery, clean design, and exactly what I needed to showcase my work professionally."</blockquote>
       <div class="tc-auth">
-        <div class="tc-av" style="background:#22c55e20;color:#22c55e;">H</div>
+        <div class="tc-av" style="background:#22c55e20;color:#22c55e;" aria-hidden="true">H</div>
         <div>
           <div class="tc-name">Himanshu Deka</div>
           <div class="tc-role">Coach · himanshudeka.com</div>
         </div>
       </div>
-    </div>
-    <div class="tc">
-      <div class="tc-stars">★★★★★</div>
-      <div class="tc-q">"Professional, creative, and incredibly talented. They transformed my fitness coaching business with a website that actually converts clients. Best investment for my business."</div>
+    </article>
+    <article class="tc">
+      <div class="tc-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote class="tc-q">"Professional, creative, and incredibly talented. They transformed my fitness coaching business with a website that actually converts clients. Best investment for my business."</blockquote>
       <div class="tc-auth">
-        <div class="tc-av" style="background:#3b82f620;color:#3b82f6;">A</div>
+        <div class="tc-av" style="background:#3b82f620;color:#3b82f6;" aria-hidden="true">A</div>
         <div>
           <div class="tc-name">Adin Ankur Saikia</div>
           <div class="tc-role">ICN Gold Medalist · getfitwithadin.com</div>
         </div>
       </div>
-    </div>
-    <div class="tc">
-      <div class="tc-stars">★★★★★</div>
-      <div class="tc-q">"They built me a complete coaching CRM from scratch. Client management, WhatsApp automation, payment tracking — everything in one place. Absolutely game-changing."</div>
+    </article>
+    <article class="tc">
+      <div class="tc-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote class="tc-q">"They built me a complete coaching CRM from scratch. Client management, WhatsApp automation, payment tracking — everything in one place. Absolutely game-changing."</blockquote>
       <div class="tc-auth">
-        <div class="tc-av" style="background:#a855f720;color:#a855f7;">G</div>
+        <div class="tc-av" style="background:#a855f720;color:#a855f7;" aria-hidden="true">G</div>
         <div>
           <div class="tc-name">George Land</div>
           <div class="tc-role">Owner · CoachFlow</div>
         </div>
       </div>
-    </div>
-    <div class="tc">
-      <div class="tc-stars">★★★★★</div>
-      <div class="tc-q">"Fast, professional, and incredibly talented. They delivered a stunning website that brought us more clients in the first month than we got in a whole year before."</div>
+    </article>
+    <article class="tc">
+      <div class="tc-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote class="tc-q">"Fast, professional, and incredibly talented. They delivered a stunning website that brought us more clients in the first month than we got in a whole year before."</blockquote>
       <div class="tc-auth">
-        <div class="tc-av" style="background:#ec489920;color:#ec4899;">R</div>
+        <div class="tc-av" style="background:#ec489920;color:#ec4899;" aria-hidden="true">R</div>
         <div>
           <div class="tc-name">Rachel Green</div>
           <div class="tc-role">Spa Owner · Wellness Studio NYC</div>
         </div>
       </div>
-    </div>
-    <div class="tc">
-      <div class="tc-stars">★★★★★</div>
-      <div class="tc-q">"They rebuilt our entire online presence from scratch. Our Google rankings improved within weeks. Highly recommend for anyone serious about growing their business."</div>
+    </article>
+    <article class="tc">
+      <div class="tc-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote class="tc-q">"They rebuilt our entire online presence from scratch. Our Google rankings improved within weeks. Highly recommend for anyone serious about growing their business."</blockquote>
       <div class="tc-auth">
-        <div class="tc-av" style="background:#f59e0b20;color:#f59e0b;">M</div>
+        <div class="tc-av" style="background:#f59e0b20;color:#f59e0b;" aria-hidden="true">M</div>
         <div>
           <div class="tc-name">Michael Torres</div>
           <div class="tc-role">Real Estate Agent · LA</div>
         </div>
       </div>
-    </div>
-    <div class="tc">
-      <div class="tc-stars">★★★★★</div>
-      <div class="tc-q">"Clean code, fast loading, beautiful design. They understood our vision perfectly and delivered beyond expectations. Our conversions have doubled since launch."</div>
+    </article>
+    <article class="tc">
+      <div class="tc-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote class="tc-q">"Clean code, fast loading, beautiful design. They understood our vision perfectly and delivered beyond expectations. Our conversions have doubled since launch."</blockquote>
       <div class="tc-auth">
-        <div class="tc-av" style="background:#06b6d420;color:#06b6d4;">E</div>
+        <div class="tc-av" style="background:#06b6d420;color:#06b6d4;" aria-hidden="true">E</div>
         <div>
           <div class="tc-name">Emily Watson</div>
           <div class="tc-role">Fashion Designer · London</div>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="sec s1 rv" id="pricing">
+<section class="sec s1 rv" id="pricing" aria-label="Pricing plans">
   <div class="sh">
     <div class="ey">Pricing</div>
     <h2 class="sh2">Straightforward Pricing.<br><em>No Surprises.</em></h2>
@@ -830,14 +956,14 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
       <div class="prc-desc">Perfect for new businesses that need a professional website without an ongoing commitment.</div>
       <div class="prc-div"></div>
       <ul class="prc-feats">
-        <li class="pf"><span class="pf-ic">✓</span>Up to 5 pages</li>
-        <li class="pf"><span class="pf-ic">✓</span>Mobile responsive design</li>
-        <li class="pf"><span class="pf-ic">✓</span>Contact form</li>
-        <li class="pf"><span class="pf-ic">✓</span>Basic SEO setup</li>
-        <li class="pf"><span class="pf-ic">✓</span>Delivered in 7 days</li>
-        <li class="pf"><span class="pf-ic">✓</span>2 rounds of revisions</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Up to 5 pages</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Mobile responsive design</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Contact form</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Basic SEO setup</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Delivered in 7 days</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>2 rounds of revisions</li>
       </ul>
-      <button class="prc-btn" onclick="goto('contact')">Get Started</button>
+      <button class="prc-btn" type="button" onclick="goto('contact')">Get Started</button>
     </div>
     <div class="prc prc-ft rv" style="transition-delay:.1s">
       <div class="prc-badge">Most Popular</div>
@@ -847,15 +973,15 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
       <div class="prc-desc">For businesses ready for a complete professional digital presence with everything included.</div>
       <div class="prc-div"></div>
       <ul class="prc-feats">
-        <li class="pf"><span class="pf-ic">✓</span>Up to 8 pages</li>
-        <li class="pf"><span class="pf-ic">✓</span>Custom design</li>
-        <li class="pf"><span class="pf-ic">✓</span>Booking integration</li>
-        <li class="pf"><span class="pf-ic">✓</span>Full SEO setup</li>
-        <li class="pf"><span class="pf-ic">✓</span>Google Analytics</li>
-        <li class="pf"><span class="pf-ic">✓</span>Delivered in 10 days</li>
-        <li class="pf"><span class="pf-ic">✓</span>Unlimited revisions</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Up to 8 pages</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Custom design</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Booking integration</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Full SEO setup</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Google Analytics</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Delivered in 10 days</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Unlimited revisions</li>
       </ul>
-      <button class="prc-btn" onclick="goto('contact')">Get Started</button>
+      <button class="prc-btn" type="button" onclick="goto('contact')">Get Started</button>
     </div>
     <div class="prc rv" style="transition-delay:.2s">
       <div class="prc-name">Premium</div>
@@ -864,15 +990,15 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
       <div class="prc-desc">For established businesses that need a premium custom solution with advanced features.</div>
       <div class="prc-div"></div>
       <ul class="prc-feats">
-        <li class="pf"><span class="pf-ic">✓</span>Unlimited pages</li>
-        <li class="pf"><span class="pf-ic">✓</span>Premium custom design</li>
-        <li class="pf"><span class="pf-ic">✓</span>Payment gateway</li>
-        <li class="pf"><span class="pf-ic">✓</span>Blog / content section</li>
-        <li class="pf"><span class="pf-ic">✓</span>Advanced SEO</li>
-        <li class="pf"><span class="pf-ic">✓</span>1 month free maintenance</li>
-        <li class="pf"><span class="pf-ic">✓</span>Unlimited revisions</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Unlimited pages</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Premium custom design</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Payment gateway</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Blog / content section</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Advanced SEO</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>1 month free maintenance</li>
+        <li class="pf"><span class="pf-ic" aria-hidden="true">✓</span>Unlimited revisions</li>
       </ul>
-      <button class="prc-btn" onclick="goto('contact')">Get Started</button>
+      <button class="prc-btn" type="button" onclick="goto('contact')">Get Started</button>
     </div>
   </div>
   <p style="text-align:center;margin-top:2rem;font-size:.88rem;color:var(--mu);">
@@ -880,8 +1006,8 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
   </p>
 </section>
 
-<!-- CTA -->
-<div class="cta rv" id="contact">
+<!-- CTA / CONTACT -->
+<div class="cta rv" id="contact" role="region" aria-label="Contact us">
   <div class="cta-l">
     <div class="ey">Let's Work Together</div>
     <h2>Your website should be<br><em>working for you 24/7.</em></h2>
@@ -895,17 +1021,22 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
   <div class="cta-r">
     <div class="cta-card">
       <div id="fWrap">
-        <label class="fl-label">Your name</label>
-        <input class="fl-input" type="text" placeholder="Jane Smith" id="fN">
-        <label class="fl-label">Email address</label>
-        <input class="fl-input" type="email" placeholder="jane@yourbusiness.com" id="fE">
-        <label class="fl-label">Website URL <span style="opacity:.4">(optional)</span></label>
-        <input class="fl-input" type="text" placeholder="https://yourbusiness.com" id="fU">
-        <button class="fl-submit" onclick="submitF()">Send Message →</button>
+        <label class="fl-label" for="fN">Your name</label>
+        <input class="fl-input" type="text" placeholder="Jane Smith" id="fN" autocomplete="name" maxlength="100">
+        <div class="fl-err" id="fNErr">Please enter your name.</div>
+        <label class="fl-label" for="fE">Email address</label>
+        <input class="fl-input" type="email" placeholder="jane@yourbusiness.com" id="fE" autocomplete="email">
+        <div class="fl-err" id="fEErr">Please enter a valid email address.</div>
+        <label class="fl-label" for="fU">Website URL <span style="opacity:.4">(optional)</span></label>
+        <input class="fl-input" type="url" placeholder="https://yourbusiness.com" id="fU" autocomplete="url">
+        <button class="fl-submit" type="button" id="fBtn" onclick="submitF()">
+          Send Message →
+          <span class="fl-spinner" aria-hidden="true"></span>
+        </button>
         <div class="fl-note">We reply within 24 hours · No spam, ever.</div>
       </div>
-      <div class="fl-ok" id="fOk">
-        <span class="fl-ok-ic">✓</span>
+      <div class="fl-ok" id="fOk" role="alert">
+        <span class="fl-ok-ic" aria-hidden="true">✓</span>
         Message sent!
         <span class="fl-ok-sub">We'll get back to you within 24 hours.</span>
       </div>
@@ -914,42 +1045,184 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
 </div>
 
 <!-- FOOTER -->
-<footer>
+<footer role="contentinfo">
   <div class="ft">
     <div>
       <div class="ft-logo">AddsGrowth<span>.</span></div>
       <div class="ft-desc">Professional websites for businesses worldwide. We build. You grow.</div>
     </div>
-    <div>
+    <nav aria-label="Footer navigation">
       <div class="ft-h">Navigation</div>
-      <ul class="ft-ul"><li><a href="#">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#pricing">Pricing</a></li></ul>
-    </div>
+      <ul class="ft-ul">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </nav>
     <div>
       <div class="ft-h">Services</div>
-      <ul class="ft-ul"><li><a href="#">Web Design</a></li><li><a href="#">SEO</a></li><li><a href="#">Landing Pages</a></li><li><a href="#">Redesign</a></li></ul>
+      <ul class="ft-ul">
+        <li><a href="#services">Web Design</a></li>
+        <li><a href="#services">SEO</a></li>
+        <li><a href="#services">Landing Pages</a></li>
+        <li><a href="#services">Redesign</a></li>
+      </ul>
     </div>
     <div>
       <div class="ft-h">Contact</div>
-      <ul class="ft-ul"><li><a href="mailto:contact@addsgrowth.org">contact@addsgrowth.org</a></li><li><a href="https://wa.me/918638740815" target="_blank">WhatsApp</a></li><li><a href="#contact">Get Started</a></li></ul>
+      <ul class="ft-ul">
+        <li><a href="mailto:contact@addsgrowth.org">contact@addsgrowth.org</a></li>
+        <li><a href="https://wa.me/918638740815" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        <li><a href="#contact">Get Started</a></li>
+      </ul>
     </div>
   </div>
   <div class="ft-bot">
     <div class="ft-copy">© 2026 AddsGrowth. All rights reserved.</div>
-    <div>USA · UAE · Australia · India · UK</div>
+    <div style="font-size:.75rem;color:var(--mu2)">USA · UAE · Australia · India · UK</div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-(function(){
-  try{emailjs.init("vpqdULncVRBcalazj")}catch(e){}
-})();
-function goto(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
-function closeD(){document.getElementById('drawer').classList.remove('open')}
-window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('pinned',window.scrollY>50)})
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('on');e.target.querySelectorAll('.ctr').forEach(el=>{if(el.dataset.done)return;el.dataset.done=1;const t=+el.dataset.t,dur=1500,s=null,step=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/dur,1);el.textContent=Math.round((1-Math.pow(1-p,3))*t);if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)})})},{threshold:.1});document.querySelectorAll('.rv').forEach(el=>io.observe(el))
-function submitF(){var e=document.getElementById('fE').value;if(!e||!e.includes('@')){document.getElementById('fE').focus();return}document.getElementById('fWrap').style.display='none';document.getElementById('fOk').style.display='block';if(window.gtag){gtag('event','generate_lead',{method:'website_form'})}emailjs.send("service_0eu8w7c","template_7v4pjdk",{name:document.getElementById('fN').value||'Visitor',email:e,website:document.getElementById('fU').value||'N/A'}).catch(function(){});fetch("https://script.google.com/macros/s/AKfycbzOXKcXai9-bUO_VnCa8T6y2XbSvqE-02fSaU0_a27eDfT30eaguajNhrFh5Z48TWAv/exec",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:document.getElementById('fN').value||"Visitor",email:e,website:document.getElementById('fU').value||"N/A",date:new Date().toISOString()})}).catch(function(){})}
-function showContactOpts(){var m=document.createElement('div');m.id='cm';m.style='position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px)';m.innerHTML='<div style="background:#111;border:1px solid #222;border-radius:16px;padding:2rem;max-width:340px;width:90%;text-align:center"><h3 style="color:#fff;margin-bottom:1.5rem;font-size:1.25rem">Get in touch</h3><a href="mailto:contact@addsgrowth.org" style="display:block;background:#1a1a1a;border:1px solid #2a2a2a;color:#fff;padding:.9rem;border-radius:8px;margin-bottom:.6rem;text-decoration:none">Email Us</a><a href="tel:+918638740815" style="display:block;background:#1a1a1a;border:1px solid #2a2a2a;color:#fff;padding:.9rem;border-radius:8px;margin-bottom:.6rem;text-decoration:none">Call Us</a><a href="https://calendly.com/adin3012/free-consultation" target="_blank" style="display:block;background:#3d9970;color:#000;padding:.9rem;border-radius:8px;text-decoration:none;font-weight:600">Book a Call</a><button onclick="document.getElementById(\'cm\').remove()" style="margin-top:1rem;background:none;border:none;color:#666;cursor:pointer">Close</button></div>';document.body.appendChild(m);m.onclick=function(e){if(e.target===m)m.remove()}}
+(function(){try{emailjs.init("vpqdULncVRBcalazj")}catch(e){}}());
+
+function goto(id){
+  var el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth'});
+}
+
+function openDrawer(btn){
+  var d=document.getElementById('drawer');
+  d.classList.add('open');
+  btn.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+  d.querySelector('a,button').focus();
+}
+
+function closeD(){
+  var d=document.getElementById('drawer');
+  d.classList.remove('open');
+  document.body.style.overflow='';
+  var ham=document.querySelector('.ham');
+  if(ham)ham.setAttribute('aria-expanded','false');
+}
+
+function openProject(url){
+  window.open(url,'_blank','noopener,noreferrer');
+}
+
+function handlePiKey(e,url){
+  if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(url);}
+}
+
+window.addEventListener('scroll',function(){
+  document.getElementById('nav').classList.toggle('pinned',window.scrollY>50);
+});
+
+/* Drawer ESC close */
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var d=document.getElementById('drawer');
+    if(d.classList.contains('open'))closeD();
+    var cm=document.getElementById('cm');
+    if(cm)cm.remove();
+  }
+});
+
+/* Intersection observer for reveal + counter animations */
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(!e.isIntersecting)return;
+    e.target.classList.add('on');
+    e.target.querySelectorAll('.ctr').forEach(function(el){
+      if(el.dataset.done)return;
+      el.dataset.done=1;
+      var t=+el.dataset.t,dur=1500,s=null;
+      function step(ts){
+        if(!s)s=ts;
+        var p=Math.min((ts-s)/dur,1);
+        el.textContent=Math.round((1-Math.pow(1-p,3))*t);
+        if(p<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  });
+},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+/* Form submission */
+function submitF(){
+  var nameEl=document.getElementById('fN');
+  var emailEl=document.getElementById('fE');
+  var nameErr=document.getElementById('fNErr');
+  var emailErr=document.getElementById('fEErr');
+  var btn=document.getElementById('fBtn');
+  var name=nameEl.value.trim();
+  var email=emailEl.value.trim();
+  var valid=true;
+
+  nameEl.classList.remove('err');
+  emailEl.classList.remove('err');
+  nameErr.classList.remove('show');
+  emailErr.classList.remove('show');
+
+  if(!name){
+    nameEl.classList.add('err');
+    nameErr.classList.add('show');
+    nameEl.focus();
+    valid=false;
+  }
+  if(!email||!email.includes('@')||!email.includes('.')){
+    emailEl.classList.add('err');
+    emailErr.classList.add('show');
+    if(valid)emailEl.focus();
+    valid=false;
+  }
+  if(!valid)return;
+
+  btn.disabled=true;
+  btn.classList.add('loading');
+
+  var website=document.getElementById('fU').value.trim()||'N/A';
+  var payload={name:name,email:email,website:website};
+
+  if(window.gtag){gtag('event','generate_lead',{method:'website_form'});}
+
+  Promise.allSettled([
+    emailjs.send("service_0eu8w7c","template_7v4pjdk",payload),
+    fetch("https://script.google.com/macros/s/AKfycbzOXKcXai9-bUO_VnCa8T6y2XbSvqE-02fSaU0_a27eDfT30eaguajNhrFh5Z48TWAv/exec",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(Object.assign({},payload,{date:new Date().toISOString()}))
+    })
+  ]).finally(function(){
+    document.getElementById('fWrap').style.display='none';
+    document.getElementById('fOk').style.display='block';
+  });
+}
+
+/* Contact options modal */
+function showContactOpts(){
+  var m=document.createElement('div');
+  m.id='cm';
+  m.setAttribute('role','dialog');
+  m.setAttribute('aria-modal','true');
+  m.setAttribute('aria-label','Contact options');
+  m.style.cssText='position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px)';
+  m.innerHTML='<div style="background:#111;border:1px solid #222;border-radius:16px;padding:2rem;max-width:340px;width:90%;text-align:center">'
+    +'<h3 style="color:#fff;margin-bottom:1.5rem;font-size:1.25rem">Get in touch</h3>'
+    +'<a href="mailto:contact@addsgrowth.org" style="display:block;background:#1a1a1a;border:1px solid #2a2a2a;color:#fff;padding:.9rem;border-radius:8px;margin-bottom:.6rem;text-decoration:none">Email Us</a>'
+    +'<a href="tel:+918638740815" style="display:block;background:#1a1a1a;border:1px solid #2a2a2a;color:#fff;padding:.9rem;border-radius:8px;margin-bottom:.6rem;text-decoration:none">Call Us</a>'
+    +'<a href="https://calendly.com/adin3012/free-consultation" target="_blank" rel="noopener noreferrer" style="display:block;background:#3d9970;color:#000;padding:.9rem;border-radius:8px;text-decoration:none;font-weight:600">Book a Call</a>'
+    +'<button type="button" onclick="document.getElementById(\'cm\').remove()" style="margin-top:1rem;background:none;border:none;color:#666;cursor:pointer;font-size:.85rem">Close</button>'
+    +'</div>';
+  document.body.appendChild(m);
+  m.onclick=function(e){if(e.target===m)m.remove();};
+  m.querySelector('a').focus();
+}
 </script>
 </body>
 </html>
