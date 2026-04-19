@@ -505,6 +505,11 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .tc-role{font-family:var(--mono);font-size:.6rem;color:var(--mu);letter-spacing:.03em}
 
 /* PRICING */
+.curr-switch{display:flex;gap:6px;justify-content:center;margin-top:1.25rem}
+.curr-btn{padding:.4rem 1.1rem;border-radius:999px;border:1px solid var(--ln);background:transparent;color:var(--mu);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s}
+.curr-btn:hover{border-color:var(--green);color:var(--green)}
+.curr-btn.curr-active{background:var(--green);border-color:var(--green);color:#000}
+.prc-val{transition:opacity .2s}
 .price-grid{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:1px;background:var(--ln);
@@ -949,12 +954,19 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
   <div class="sh">
     <div class="ey">Pricing</div>
     <h2 class="sh2">Straightforward Pricing.<br><em>No Surprises.</em></h2>
-    <p class="sp">All prices in USD. Pay once. Own it forever. No monthly platform fees.</p>
+    <p class="sp">Pay once. Own it forever. No monthly platform fees.</p>
+    <div class="curr-switch" role="group" aria-label="Currency selector">
+      <button class="curr-btn curr-active" onclick="setCurr('usd')" type="button">USD $</button>
+      <button class="curr-btn" onclick="setCurr('inr')" type="button">INR ₹</button>
+      <button class="curr-btn" onclick="setCurr('aed')" type="button">AED د.إ</button>
+    </div>
   </div>
   <div class="price-grid">
     <div class="prc rv">
       <div class="prc-name">Starter</div>
-      <div class="prc-pr"><span class="prc-curr">$</span>499</div>
+      <div class="prc-pr">
+        <span class="prc-curr prc-sym">$</span><span class="prc-val" data-usd="499" data-inr="24,999" data-aed="1,835">499</span>
+      </div>
       <div class="prc-per">one-time project</div>
       <div class="prc-desc">Perfect for new businesses that need a professional website without an ongoing commitment.</div>
       <div class="prc-div"></div>
@@ -971,7 +983,9 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
     <div class="prc prc-ft rv" style="transition-delay:.1s">
       <div class="prc-badge">Most Popular</div>
       <div class="prc-name">Growth</div>
-      <div class="prc-pr"><span class="prc-curr">$</span>999</div>
+      <div class="prc-pr">
+        <span class="prc-curr prc-sym">$</span><span class="prc-val" data-usd="999" data-inr="39,999" data-aed="3,670">999</span>
+      </div>
       <div class="prc-per">full business website</div>
       <div class="prc-desc">For businesses ready for a complete professional digital presence with everything included.</div>
       <div class="prc-div"></div>
@@ -988,7 +1002,9 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
     </div>
     <div class="prc rv" style="transition-delay:.2s">
       <div class="prc-name">Premium</div>
-      <div class="prc-pr"><span class="prc-curr">$</span>1,999</div>
+      <div class="prc-pr">
+        <span class="prc-curr prc-sym">$</span><span class="prc-val" data-usd="1,999" data-inr="74,999" data-aed="7,340">1,999</span>
+      </div>
       <div class="prc-per">complete digital presence</div>
       <div class="prc-desc">For established businesses that need a premium custom solution with advanced features.</div>
       <div class="prc-div"></div>
@@ -1092,6 +1108,16 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
 <script>
 (function(){try{emailjs.init("vpqdULncVRBcalazj")}catch(e){}}());
 
+const CURR_SYMS={usd:'$',inr:'₹',aed:'د.إ'};
+function setCurr(c){
+  document.querySelectorAll('.curr-btn').forEach(b=>b.classList.remove('curr-active'));
+  document.querySelector(`.curr-btn[onclick="setCurr('${c}')"]`).classList.add('curr-active');
+  document.querySelectorAll('.prc-sym').forEach(s=>s.textContent=CURR_SYMS[c]);
+  document.querySelectorAll('.prc-val').forEach(v=>{
+    v.style.opacity=0;
+    setTimeout(()=>{v.textContent=v.dataset[c];v.style.opacity=1},150);
+  });
+}
 function goto(id){
   var el=document.getElementById(id);
   if(el)el.scrollIntoView({behavior:'smooth'});
