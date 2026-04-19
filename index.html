@@ -1395,12 +1395,31 @@ html{scroll-behavior:smooth}
   requestAnimationFrame(()=>h1.classList.add('animated'));
 })();
 
-// SPLIT TEXT — section headings animate word by word on scroll
-document.querySelectorAll('.sh2').forEach(el=>{
-  el.innerHTML=el.innerHTML.replace(/(<em>[^<]*<\/em>|[^\s<]+)/g,(match)=>{
-    return `<span class="split-word"><span>${match}</span></span> `;
+// SPLIT TEXT — word-by-word animation on .sh2 headings (DOM-safe)
+function splitEl(el){
+  el.childNodes.forEach(node=>{
+    if(node.nodeType===3){// text node
+      const frag=document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(part=>{
+        if(/^\s+$/.test(part)||part===''){
+          frag.appendChild(document.createTextNode(part));
+        } else {
+          const outer=document.createElement('span');
+          outer.className='split-word';
+          const inner=document.createElement('span');
+          inner.textContent=part;
+          outer.appendChild(inner);
+          frag.appendChild(outer);
+        }
+      });
+      node.replaceWith(frag);
+    } else if(node.nodeType===1&&node.tagName!=='BR'){
+      // wrap contents of em/strong etc
+      splitEl(node);
+    }
   });
-});
+}
+document.querySelectorAll('.sh2').forEach(el=>splitEl(el));
 const splitObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
