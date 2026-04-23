@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aisha Williams | Career Strategist | Land Your Dream Role</title>
+<meta name="description" content="Former Google recruiter turned career coach. 500+ professionals landed their dream jobs at top companies. ATS optimization & interview mastery.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%237c3aed'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='12' font-weight='700' fill='white'%3EAW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0c0a14;--purple:#7c3aed;--violet:#8b5cf6;--pink:#c084fc;--white:#fff;--gray:#a1a1aa;--dark:#16131f;--card:#1e1a2e}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);line-height:1.6}
+h1,h2,h3{font-family:'Outfit',sans-serif;font-weight:700}
+.container{max-width:1200px;margin:0 auto;padding:0 5%}
+a{text-decoration:none;color:inherit}
+.purple{color:var(--purple)}
+.violet{color:var(--violet)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(12,10,20,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(124,58,237,.15)}
+.logo{font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:700;display:flex;align-items:center;gap:.5rem}
+.logo span{color:var(--violet)}
+nav ul{display:flex;gap:2rem}
+nav a{font-size:.85rem;font-weight:500;color:var(--gray);transition:color .2s}
+nav a:hover{color:var(--white)}
+.cta-btn{background:var(--purple);color:var(--white);padding:.65rem 1.5rem;border-radius:8px;font-weight:600;font-size:.85rem;transition:background .2s}
+.cta-btn:hover{background:var(--violet)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:5rem 5% 3rem;gap:4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-10%;width:60%;height:150%;background:radial-gradient(ellipse,rgba(124,58,237,.15) 0%,transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,.3),transparent)}
+.hero-left{z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3);padding:.5rem 1rem;border-radius:100px;font-size:.8rem;color:var(--violet);margin-bottom:2rem}
+.hero h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;margin-bottom:1.5rem}
+.hero h1 span{background:linear-gradient(135deg,var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.1rem;color:var(--gray);max-width:50ch;margin-bottom:2rem;line-height:1.8}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--purple);color:var(--white);padding:1rem 2rem;border-radius:8px;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:background .2s}
+.btn-primary:hover{background:var(--violet)}
+.btn-ghost{border:1px solid rgba(124,58,237,.3);color:var(--white);padding:1rem 2rem;border-radius:8px;font-weight:600;font-size:.9rem;transition:all .2s}
+.btn-ghost:hover{border-color:var(--purple);background:rgba(124,58,237,.1)}
+.hero-right{position:relative;z-index:1}
+.profile-card{background:var(--card);border:1px solid rgba(124,58,237,.2);border-radius:16px;padding:2rem;text-align:center}
+.profile-avatar{width:100px;height:100px;background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:50%;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700}
+.profile-name{font-family:'Outfit',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:.25rem}
+.profile-title{font-size:.85rem;color:var(--gray);margin-bottom:1.5rem}
+.profile-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(124,58,237,.1);border-radius:8px;overflow:hidden;margin-bottom:1.5rem}
+.profile-stat{background:var(--dark);padding:.75rem}
+.profile-stat-val{font-family:'Outfit',sans-serif;font-size:1.25rem;font-weight:700;color:var(--violet)}
+.profile-stat-label{font-size:.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:.05em}
+.profile-companies{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.profile-companies span{font-size:.75rem;color:var(--gray);background:var(--dark);padding:.35rem .75rem;border-radius:4px}
+
+/* TRUST */
+.trust{padding:3rem 5%;border-top:1px solid rgba(124,58,237,.1);border-bottom:1px solid rgba(124,58,237,.1)}
+.trust-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:2rem}
+.trust-item{text-align:center}
+.trust-num{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--violet)}
+.trust-label{font-size:.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em}
+
+/* ABOUT */
+.about{padding:6rem 5%}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-img{position:relative}
+.about-img img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;filter:brightness(.9)}
+.about-img::before{content:'';position:absolute;inset:1rem;border:2px solid var(--purple);border-radius:16px;z-index:-1;opacity:.5}
+.about-badge{position:absolute;bottom:2rem;right:-1rem;background:var(--purple);padding:1rem 1.5rem;border-radius:12px}
+.about-badge span{display:block;font-family:'Outfit',sans-serif;font-size:1.75rem;font-weight:700}
+.about-badge small{font-size:.7rem;opacity:.8}
+.about-content h2{font-size:2.25rem;margin-bottom:1.5rem}
+.about-content h2 span{color:var(--violet)}
+.about-content p{color:var(--gray);margin-bottom:1.25rem;font-size:1rem;line-height:1.8}
+.about-highlights{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem}
+.about-highlight{display:flex;align-items:center;gap:.75rem;font-size:.95rem}
+.about-highlight::before{content:'→';color:var(--violet);font-weight:700}
+
+/* SERVICES */
+.services{padding:6rem 5%;background:var(--dark)}
+.services h2{font-size:2.25rem;text-align:center;margin-bottom:.5rem}
+.services h2 span{color:var(--violet)}
+.services > p{text-align:center;color:var(--gray);margin-bottom:3rem}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service{background:var(--card);border:1px solid rgba(124,58,237,.15);border-radius:12px;padding:2rem;transition:border-color .3s,transform .3s}
+.service:hover{border-color:var(--purple);transform:translateY(-4px)}
+.service-icon{width:50px;height:50px;background:rgba(124,58,237,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem}
+.service h3{font-size:1.1rem;margin-bottom:.75rem}
+.service p{font-size:.9rem;color:var(--gray);line-height:1.7}
+
+/* RESULTS */
+.results{padding:6rem 5%}
+.results h2{font-size:2.25rem;text-align:center;margin-bottom:3rem}
+.results h2 span{color:var(--violet)}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.result-card{background:var(--card);border:1px solid rgba(124,58,237,.15);border-radius:12px;padding:1.5rem;text-align:center}
+.result-card:hover{border-color:var(--purple)}
+.result-role{font-size:.75rem;color:var(--violet);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.result-company{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.25rem}
+.result-raise{font-size:.85rem;color:#22c55e;font-weight:600}
+
+/* TESTIMONIALS */
+.testimonials{padding:6rem 5%;background:var(--dark)}
+.testimonials h2{font-size:2.25rem;text-align:center;margin-bottom:3rem}
+.testimonials h2 span{color:var(--violet)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.testi-card{background:var(--card);border:1px solid rgba(124,58,237,.15);border-radius:12px;padding:2rem}
+.testi-stars{color:#fbbf24;margin-bottom:1rem;font-size:.9rem}
+.testi-text{font-size:.95rem;color:var(--gray);line-height:1.8;margin-bottom:1.5rem}
+.testi-author{display:flex;align-items:center;gap:1rem}
+.testi-avatar{width:45px;height:45px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-weight:700}
+.testi-name{font-weight:600;font-size:.95rem}
+.testi-role{font-size:.8rem;color:var(--gray)}
+
+/* PRICING */
+.pricing{padding:6rem 5%}
+.pricing h2{font-size:2.25rem;text-align:center;margin-bottom:.5rem}
+.pricing h2 span{color:var(--violet)}
+.pricing > p{text-align:center;color:var(--gray);margin-bottom:3rem}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.price-card{background:var(--card);border:1px solid rgba(124,58,237,.15);border-radius:12px;padding:2.5rem;text-align:center;transition:border-color .3s}
+.price-card:hover{border-color:var(--purple)}
+.price-card.featured{background:linear-gradient(180deg,rgba(124,58,237,.15) 0%,var(--card) 100%);border:2px solid var(--purple)}
+.price-name{font-family:'Outfit',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);margin-bottom:1rem}
+.price-amount{font-family:'Outfit',sans-serif;font-size:3rem;font-weight:700;margin-bottom:.25rem}
+.price-period{font-size:.85rem;color:var(--gray);margin-bottom:1.5rem}
+.price-features{list-style:none;text-align:left;margin-bottom:2rem}
+.price-features li{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.9rem;color:var(--gray);display:flex;align-items:center;gap:.75rem}
+.price-features li::before{content:'✓';color:var(--violet);font-weight:700}
+.price-btn{width:100%;padding:1rem;background:var(--dark);border:1px solid var(--purple);color:var(--white);border-radius:8px;font-weight:700;cursor:pointer;transition:background .2s}
+.price-card.featured .price-btn{background:var(--purple)}
+.price-btn:hover{background:var(--violet)}
+
+/* CTA */
+.cta-section{padding:6rem 5%;text-align:center}
+.cta-section h2{font-size:2.25rem;margin-bottom:1rem}
+.cta-section h2 span{color:var(--violet)}
+.cta-section p{color:var(--gray);max-width:50ch;margin:0 auto 2rem;font-size:1.05rem}
+
+/* FOOTER */
+footer{background:var(--dark);padding:4rem 5% 2rem;border-top:1px solid rgba(124,58,237,.1)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.footer-logo{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:1rem}
+.footer-logo span{color:var(--violet)}
+.footer-desc{color:var(--gray);font-size:.9rem;line-height:1.7}
+.footer h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem;color:var(--gray)}
+.footer ul{list-style:none}
+.footer li{margin-bottom:.75rem}
+.footer a{color:var(--gray);font-size:.9rem;transition:color .2s}
+.footer a:hover{color:var(--violet)}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--gray)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav ul,.cta-btn{display:none}
+  .hero{grid-template-columns:1fr;text-align:center}
+  .hero-btns{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .services-grid,.testi-grid,.price-grid,.results-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="logo"><span>Aisha</span>Williams</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Success Stories</a></li>
+    <li><a href="#pricing">Investment</a></li>
+  </ul>
+  <a href="#contact" class="cta-btn">Book Free Call</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Former Google Recruiter</div>
+    <h1>Land Your <span>Dream Job</span></h1>
+    <p>I help ambitious professionals break into top companies like Google, Meta, Amazon, and Apple. Stop applying blindly. Start getting offers.</p>
+    <div class="hero-btns">
+      <a href="#pricing" class="btn-primary">View Programs →</a>
+      <a href="#results" class="btn-ghost">Success Stories</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="profile-card">
+      <div class="profile-avatar">AW</div>
+      <div class="profile-name">Aisha Williams</div>
+      <div class="profile-title">Career Strategist & Ex-Google Recruiter</div>
+      <div class="profile-stats">
+        <div class="profile-stat">
+          <div class="profile-stat-val">500+</div>
+          <div class="profile-stat-label">Placed</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-val">$250K+</div>
+          <div class="profile-stat-label">Avg Salary</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-val">89%</div>
+          <div class="profile-stat-label">Success</div>
+        </div>
+      </div>
+      <div class="profile-companies">
+        <span>Google</span>
+        <span>Meta</span>
+        <span>Amazon</span>
+        <span>Apple</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-grid container">
+    <div class="trust-item"><div class="trust-num">500+</div><div class="trust-label">Professionals Placed</div></div>
+    <div class="trust-item"><div class="trust-num">$250K+</div><div class="trust-label">Average Salary Increase</div></div>
+    <div class="trust-item"><div class="trust-num">89%</div><div class="trust-label">Success Rate</div></div>
+    <div class="trust-item"><div class="trust-num">6+</div><div class="trust-label">Years Recruiting</div></div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-grid container">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" alt="Aisha Williams career coach">
+      <div class="about-badge">
+        <span>6+</span>
+        <small>Years at Google</small>
+      </div>
+    </div>
+    <div class="about-content">
+      <h2>Your Career <span>Success Partner</span></h2>
+      <p>For 6 years, I was on the other side of the table - interviewing, screening, and hiring talent for Google's most competitive positions. I know exactly what they look for and how to game the system.</p>
+      <p>Now I help ambitious professionals leverage that insider knowledge to land offers at top tech companies. My clients average $250K+ in salary increases within 6 months.</p>
+      <div class="about-highlights">
+        <div class="about-highlight">ATS optimization that gets your resume seen</div>
+        <div class="about-highlight">Interview frameworks from real hiring managers</div>
+        <div class="about-highlight">Salary negotiation tactics that work</div>
+        <div class="about-highlight">Direct referrals to hiring managers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2>How I <span>Help</span></h2>
+  <p>Comprehensive career acceleration programs for every stage</p>
+  <div class="services-grid container">
+    <div class="service">
+      <div class="service-icon">📄</div>
+      <h3>Resume Overhaul</h3>
+      <p>ATS-optimized resumes that actually get past screening. I'll rewrite yours based on what hiring managers at top companies actually look for.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">🎯</div>
+      <h3>Targeted Applications</h3>
+      <p>Curated job matching based on your skills and goals. No more spray-and-pray applications. Every application is strategic.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">💬</div>
+      <h3>Interview Coaching</h3>
+      <p>Mock interviews with real questions. Behavioral prep using STAR method. Technical interviews for engineering roles.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">💰</div>
+      <h3>Salary Negotiation</h3>
+      <p>Don't leave money on the table. I'll coach you through negotiation to maximize your offer, typically adding $30-50K.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">🔗</div>
+      <h3>Referral Network</h3>
+      <p>Direct referrals to hiring managers at 200+ companies. Tap into my network of recruiters and hiring teams.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">🚀</div>
+      <h3>Career Strategy</h3>
+      <p>Long-term career roadmaps. Promotion strategies. Leadership development. Future-proof your career.</p>
+    </div>
+  </div>
+</section>
+
+<section class="results" id="results">
+  <h2>Success <span>Stories</span></h2>
+  <div class="results-grid container">
+    <div class="result-card">
+      <div class="result-role">Software Engineer</div>
+      <div class="result-company">Meta → Google</div>
+      <div class="result-raise">↑ 85% Salary Increase</div>
+    </div>
+    <div class="result-card">
+      <div class="result-role">Product Manager</div>
+      <div class="result-company">Startup → Apple</div>
+      <div class="result-raise">↑ $180K → $320K</div>
+    </div>
+    <div class="result-card">
+      <div class="result-role">Data Scientist</div>
+      <div class="result-company">Amazon L4 → L6</div>
+      <div class="result-raise">↑ Promotion in 8 months</div>
+    </div>
+    <div class="result-card">
+      <div class="result-role">UX Designer</div>
+      <div class="result-company">Freelance → Airbnb</div>
+      <div class="result-raise">↑ $95K → $195K</div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>What Clients <span>Say</span></h2>
+  <div class="testi-grid container">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Aisha got me multiple offers from Google and Meta. The interview prep was incredible - she knew exactly what questions would be asked."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">JK</div>
+        <div><div class="testi-name">Kevin Johnson</div><div class="testi-role">Software Engineer at Google</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"From $95K to $195K in one career move. Aisha's salary negotiation coaching alone was worth 10x what I paid her."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">LM</div>
+        <div><div class="testi-name">Lisa Martinez</div><div class="testi-role">Senior Designer at Airbnb</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Got hired at Apple within 3 months of working with Aisha. The referral network alone connected me to opportunities I never would have found."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">RN</div>
+        <div><div class="testi-name">Rachel Ng</div><div class="testi-role">Product Manager at Apple</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Investment <span>Options</span></h2>
+  <p>Choose the program that matches your career goals</p>
+  <div class="price-grid container">
+    <div class="price-card">
+      <div class="price-name">Resume Package</div>
+      <div class="price-amount">$497</div>
+      <div class="price-period">one-time</div>
+      <ul class="price-features">
+        <li>ATS-optimized resume</li>
+        <li>Cover letter template</li>
+        <li>LinkedIn optimization</li>
+        <li>2 rounds of revisions</li>
+      </ul>
+      <button class="price-btn">Get Started</button>
+    </div>
+    <div class="price-card featured">
+      <div class="price-name">Career Launch</div>
+      <div class="price-amount">$2,497</div>
+      <div class="price-period">3-month program</div>
+      <ul class="price-features">
+        <li>Everything in Resume</li>
+        <li>Interview coaching (5 sessions)</li>
+        <li>Targeted job strategy</li>
+        <li>Salary negotiation prep</li>
+      </ul>
+      <button class="price-btn">Apply Now</button>
+    </div>
+    <div class="price-card">
+      <div class="price-name">Executive</div>
+      <div class="price-amount">$4,997</div>
+      <div class="price-period">6-month program</div>
+      <ul class="price-features">
+        <li>Unlimited interview prep</li>
+        <li>Referral network access</li>
+        <li>Direct introductions</li>
+        <li>Guarantee placement*</li>
+      </ul>
+      <button class="price-btn">Apply Now</button>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <h2>Ready to <span>Level Up?</span></h2>
+  <p>Book your free career strategy call. Let's analyze your profile and create a roadmap to your dream job.</p>
+  <a href="#" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem">Book Free Strategy Call →</a>
+</section>
+
+<footer>
+  <div class="footer-grid container">
+    <div>
+      <div class="footer-logo"><span>Aisha</span>Williams</div>
+      <p class="footer-desc">Former Google recruiter helping professionals land their dream jobs at top tech companies.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Resume Overhaul</a></li>
+        <li><a href="#">Interview Coaching</a></li>
+        <li><a href="#">Salary Negotiation</a></li>
+        <li><a href="#">Referral Network</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Free Resume Template</a></li>
+        <li><a href="#">Salary Guide</a></li>
+        <li><a href="#">Interview Tips</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="mailto:aisha@aishawilliams.co">aisha@aishawilliams.co</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <div>© 2024 Aisha Williams Career Coaching. All rights reserved.</div>
+    <div>San Francisco · Remote</div>
+  </div>
+</footer>
+</body>
+</html>

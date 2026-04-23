@@ -1,0 +1,10 @@
+# Sensitive client documents
+quotation*.html
+quotation*.pdf
+
+# Local assets not used in production
+graphify-out/
+coachflow.mp4
+
+# OS
+.DS_Store

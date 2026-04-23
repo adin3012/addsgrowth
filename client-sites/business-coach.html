@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcus Webb | Business Strategy Coach | Scale Your Business to 7 Figures</title>
+<meta name="description" content="Former McKinsey consultant turned business coach. Helped 200+ entrepreneurs scale from 6 to 7 figures. Results guaranteed or money back.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231e3a5f'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia' font-size='14' font-weight='700' fill='white'%3EMW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f172a;--navy:#1e3a5f;--blue:#3b82f6;--white:#fff;--gray:#94a3b8;--light:#1e293b;--gold:#fbbf24}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--white);line-height:1.6}
+h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800}
+.container{max-width:1200px;margin:0 auto;padding:0 5%}
+a{text-decoration:none;color:inherit}
+.blue{color:var(--blue)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(59,130,246,.1)}
+.logo{font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:800;display:flex;align-items:center;gap:.5rem}
+.logo span:first-child{color:var(--blue)}
+.logo span:last-child{color:var(--white)}
+nav ul{display:flex;gap:2rem}
+nav a{font-size:.85rem;font-weight:500;color:var(--gray);transition:color .2s}
+nav a:hover{color:var(--white)}
+.cta-btn{background:var(--blue);color:var(--white);padding:.65rem 1.5rem;border-radius:6px;font-weight:600;font-size:.85rem;transition:background .2s}
+.cta-btn:hover{background:#2563eb}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.2fr 0.8fr;align-items:center;padding:5rem 5% 3rem;gap:3rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,rgba(59,130,246,.05) 0%,transparent 50%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,.3),transparent)}
+.hero-left{z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);padding:.5rem 1rem;border-radius:100px;font-size:.8rem;color:var(--blue);margin-bottom:2rem}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;margin-bottom:1.5rem}
+.hero h1 span{color:var(--blue)}
+.hero p{font-size:1.1rem;color:var(--gray);max-width:50ch;margin-bottom:2rem;line-height:1.8}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--blue);color:var(--white);padding:1rem 2rem;border-radius:6px;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:background .2s}
+.btn-primary:hover{background:#2563eb}
+.btn-ghost{border:1px solid var(--gray);color:var(--white);padding:1rem 2rem;border-radius:6px;font-weight:600;font-size:.9rem;transition:all .2s}
+.btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.05}
+.hero-right{position:relative;z-index:1}
+.dashboard{background:var(--light);border:1px solid rgba(59,130,246,.15);border-radius:12px;padding:1.5rem}
+.dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.dash-title{font-family:'Manrope',sans-serif;font-size:.8rem;color:var(--gray)}
+.dash-dot{width:8px;height:8px;border-radius:50%;background:#22c55e}
+.dash-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);border-radius:8px;overflow:hidden;margin-bottom:1.5rem}
+.dash-stat{background:var(--bg);padding:1rem}
+.dash-stat-val{font-family:'Manrope',sans-serif;font-size:1.5rem;font-weight:700}
+.dash-stat-val span{color:var(--blue)}
+.dash-stat-label{font-size:.7rem;color:var(--gray);text-transform:uppercase;letter-spacing:.05em}
+.dash-chart{display:flex;align-items:flex-end;gap:4px;height:80px;margin-bottom:1.5rem}
+.dash-bar{flex:1;background:var(--navy);border-radius:3px 3px 0 0;transition:height .3s}
+.dash-bar.hot{background:linear-gradient(180deg,var(--blue) 0%,rgba(59,130,246,.3) 100%)}
+.dash-rows{display:flex;flex-direction:column;gap:0}
+.dash-row{display:flex;align-items:center;gap:1rem;padding:.75rem 0;border-top:1px solid rgba(255,255,255,.05)}
+.dash-row:first-child{border-top:none}
+.dash-icon{width:32px;height:32px;background:rgba(59,130,246,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.dash-row-txt{font-size:.85rem}
+.dash-row-sub{font-size:.7rem;color:var(--gray)}
+
+/* TRUST */
+.trust{padding:3rem 5%;border-top:1px solid rgba(59,130,246,.1);border-bottom:1px solid rgba(59,130,246,.1)}
+.trust-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+.trust-item{text-align:center}
+.trust-num{font-family:'Manrope',sans-serif;font-size:2rem;font-weight:800;color:var(--blue)}
+.trust-label{font-size:.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em}
+
+/* ABOUT */
+.about{padding:6rem 5%}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-img{position:relative}
+.about-img img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;filter:brightness(.9)}
+.about-img::before{content:'';position:absolute;top:1rem;left:1rem;right:-1rem;bottom:-1rem;border:2px solid var(--blue);border-radius:12px;z-index:-1}
+.about-badge{position:absolute;bottom:2rem;right:-1rem;background:var(--blue);padding:1rem 1.5rem;border-radius:8px}
+.about-badge span{display:block;font-family:'Manrope',sans-serif;font-size:1.75rem;font-weight:800}
+.about-badge small{font-size:.7rem;opacity:.8}
+.about-content h2{font-size:2.25rem;margin-bottom:1.5rem}
+.about-content h2 span{color:var(--blue)}
+.about-content p{color:var(--gray);margin-bottom:1.25rem;font-size:1rem;line-height:1.8}
+.about-list{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem}
+.about-list li{display:flex;align-items:center;gap:.75rem;font-size:.95rem}
+.about-list li::before{content:'✓';color:var(--blue);font-weight:700}
+
+/* SERVICES */
+.services{padding:6rem 5%;background:var(--light)}
+.services h2{font-size:2.25rem;text-align:center;margin-bottom:.5rem}
+.services h2 span{color:var(--blue)}
+.services > p{text-align:center;color:var(--gray);margin-bottom:3rem}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service{background:var(--bg);border:1px solid rgba(59,130,246,.1);border-radius:12px;padding:2rem;transition:border-color .3s,transform .3s}
+.service:hover{border-color:var(--blue);transform:translateY(-4px)}
+.service-num{font-family:'Manrope',sans-serif;font-size:.7rem;color:var(--blue);margin-bottom:1rem;opacity:.6}
+.service h3{font-size:1.1rem;margin-bottom:.75rem}
+.service p{font-size:.9rem;color:var(--gray);line-height:1.7}
+
+/* RESULTS */
+.results{padding:6rem 5%}
+.results h2{font-size:2.25rem;text-align:center;margin-bottom:3rem}
+.results h2 span{color:var(--blue)}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.result-card{background:var(--light);border-radius:12px;padding:2rem;text-align:center;border:1px solid rgba(59,130,246,.1)}
+.result-card:hover{border-color:var(--blue)}
+.result-before{font-size:.75rem;color:var(--gray);margin-bottom:.5rem}
+.result-after{font-family:'Manrope',sans-serif;font-size:2rem;font-weight:800;color:var(--blue);margin-bottom:.25rem}
+.result-after span{font-size:1rem}
+.result-change{font-size:.85rem;color:#22c55e;font-weight:600}
+
+/* TESTIMONIALS */
+.testimonials{padding:6rem 5%;background:var(--light)}
+.testimonials h2{font-size:2.25rem;text-align:center;margin-bottom:3rem}
+.testimonials h2 span{color:var(--blue)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.testi-card{background:var(--bg);border:1px solid rgba(59,130,246,.1);border-radius:12px;padding:2rem}
+.testi-stars{color:var(--gold);margin-bottom:1rem;font-size:.9rem}
+.testi-text{font-size:.95rem;color:var(--gray);line-height:1.8;margin-bottom:1.5rem}
+.testi-author{display:flex;align-items:center;gap:1rem}
+.testi-avatar{width:45px;height:45px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;color:var(--blue)}
+.testi-name{font-weight:600;font-size:.95rem}
+.testi-role{font-size:.8rem;color:var(--gray)}
+
+/* PRICING */
+.pricing{padding:6rem 5%}
+.pricing h2{font-size:2.25rem;text-align:center;margin-bottom:.5rem}
+.pricing h2 span{color:var(--blue)}
+.pricing > p{text-align:center;color:var(--gray);margin-bottom:3rem}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.price-card{background:var(--light);border:1px solid rgba(59,130,246,.1);border-radius:12px;padding:2.5rem;text-align:center;transition:border-color .3s}
+.price-card:hover{border-color:var(--blue)}
+.price-card.featured{background:linear-gradient(180deg,rgba(59,130,246,.1) 0%,var(--light) 100%);border:2px solid var(--blue)}
+.price-name{font-family:'Manrope',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);margin-bottom:1rem}
+.price-amount{font-family:'Manrope',sans-serif;font-size:3rem;font-weight:800;margin-bottom:.25rem}
+.price-amount span{font-size:1.25rem;vertical-align:super}
+.price-period{font-size:.85rem;color:var(--gray);margin-bottom:1.5rem}
+.price-features{list-style:none;text-align:left;margin-bottom:2rem}
+.price-features li{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.9rem;color:var(--gray);display:flex;align-items:center;gap:.75rem}
+.price-features li::before{content:'✓';color:var(--blue);font-weight:700}
+.price-btn{width:100%;padding:1rem;background:var(--navy);border:1px solid var(--blue);color:var(--white);border-radius:6px;font-weight:700;cursor:pointer;transition:background .2s}
+.price-card.featured .price-btn{background:var(--blue)}
+.price-btn:hover{background:var(--blue)}
+
+/* CTA */
+.cta-section{padding:6rem 5%;text-align:center}
+.cta-section h2{font-size:2.25rem;margin-bottom:1rem}
+.cta-section h2 span{color:var(--blue)}
+.cta-section p{color:var(--gray);max-width:50ch;margin:0 auto 2rem;font-size:1.05rem}
+
+/* FOOTER */
+footer{background:var(--light);padding:4rem 5% 2rem;border-top:1px solid rgba(59,130,246,.1)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.footer-logo{font-family:'Manrope',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem}
+.footer-logo span{color:var(--blue)}
+.footer-desc{color:var(--gray);font-size:.9rem;line-height:1.7}
+.footer h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem;color:var(--gray)}
+.footer ul{list-style:none}
+.footer li{margin-bottom:.75rem}
+.footer a{color:var(--gray);font-size:.9rem;transition:color .2s}
+.footer a:hover{color:var(--blue)}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--gray)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav ul,.cta-btn{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-btns{justify-content:center}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .services-grid,.testi-grid,.price-grid,.results-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:600px){
+  .trust-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="logo"><span>MW</span><span>Strategy</span></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#pricing">Investment</a></li>
+  </ul>
+  <a href="#contact" class="cta-btn">Book Strategy Call</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><span class="hero-badge-dot"></span> Former McKinsey Consultant</div>
+    <h1>Scale Your Business<br>to <span>7 Figures</span></h1>
+    <p>I help ambitious entrepreneurs stop working in their business and start working on it. Stop the chaos. Build systems. Scale profitably.</p>
+    <div class="hero-btns">
+      <a href="#pricing" class="btn-primary">View Programs →</a>
+      <a href="#results" class="btn-ghost">See Results</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="dashboard">
+      <div class="dash-header">
+        <span class="dash-title">revenue_tracker.exe</span>
+        <div class="dash-dot"></div>
+      </div>
+      <div class="dash-stats">
+        <div class="dash-stat"><div class="dash-stat-val"><span>$</span>847K</div><div class="dash-stat-label">Revenue</div></div>
+        <div class="dash-stat"><div class="dash-stat-val"><span>+</span>156%</div><div class="dash-stat-label">Growth</div></div>
+        <div class="dash-stat"><div class="dash-stat-val"><span>23</div></div><div class="dash-stat-label">Clients</div></div>
+      </div>
+      <div class="dash-chart">
+        <div class="dash-bar" style="height:45%"></div>
+        <div class="dash-bar" style="height:55%"></div>
+        <div class="dash-bar" style="height:50%"></div>
+        <div class="dash-bar hot" style="height:70%"></div>
+        <div class="dash-bar hot" style="height:65%"></div>
+        <div class="dash-bar" style="height:80%"></div>
+        <div class="dash-bar hot" style="height:75%"></div>
+        <div class="dash-bar hot" style="height:95%"></div>
+      </div>
+      <div class="dash-rows">
+        <div class="dash-row">
+          <div class="dash-icon">💰</div>
+          <div class="dash-row-txt">Q4 Revenue Target</div>
+          <div class="dash-row-sub" style="color:var(--blue)">On Track</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-grid container">
+    <div class="trust-item"><div class="trust-num">200+</div><div class="trust-label">Businesses Scaled</div></div>
+    <div class="trust-item"><div class="trust-num">$50M+</div><div class="trust-label">Revenue Generated</div></div>
+    <div class="trust-item"><div class="trust-num">8 Years</div><div class="trust-label">Coaching Experience</div></div>
+    <div class="trust-item"><div class="trust-num">4.9</div><div class="trust-label">Average Rating</div></div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-grid container">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="Marcus Webb business coach">
+      <div class="about-badge">
+        <span>8</span>
+        <small>Years Experience</small>
+      </div>
+    </div>
+    <div class="about-content">
+      <h2>Your Success is<br><span>My Blueprint</span></h2>
+      <p>After 6 years at McKinsey advising Fortune 500 companies, I realized the real impact comes from working directly with entrepreneurs who have skin in the game.</p>
+      <p>Since then, I've helped 200+ businesses scale from startup to 7 figures. My approach combines strategic frameworks with practical execution. No fluff. Just results.</p>
+      <ul class="about-list">
+        <li>✓ Harvard Business School Methodology</li>
+        <li>✓ proven scaling frameworks</li>
+        <li>✓ Systems & processes that scale</li>
+        <li>✓ Accountability & execution focus</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2>What I <span>Offer</span></h2>
+  <p>Comprehensive business coaching programs for every stage of growth</p>
+  <div class="services-grid container">
+    <div class="service">
+      <div class="service-num">// 01</div>
+      <h3>Business Audit</h3>
+      <p>Deep-dive analysis of your current business. Identify bottlenecks, opportunities, and the exact roadmap to scale.</p>
+    </div>
+    <div class="service">
+      <div class="service-num">// 02</div>
+      <h3>6-Figure Blueprint</h3>
+      <p>For businesses stuck below $100K. Build the foundation, systems, and offers to break through to profitability.</p>
+    </div>
+    <div class="service">
+      <div class="service-num">// 03</div>
+      <h3>7-Figure Accelerator</h3>
+      <p>For businesses ready to scale. Advanced strategies for team building, systems, and sustainable growth.</p>
+    </div>
+    <div class="service">
+      <div class="service-num">// 04</div>
+      <h3>Exit Strategy</h3>
+      <p>Prepare your business for sale. Build a company that runs without you and commands premium valuations.</p>
+    </div>
+    <div class="service">
+      <div class="service-num">// 05</div>
+      <h3>Team Building</h3>
+      <p>Hire, train, and manage a team that doubles your capacity. No more wearing every hat yourself.</p>
+    </div>
+    <div class="service">
+      <div class="service-num">// 06</div>
+      <h3>Group Mastermind</h3>
+      <p>Bi-weekly mastermind sessions with ambitious founders. Peer accountability and collective wisdom.</p>
+    </div>
+  </div>
+</section>
+
+<section class="results" id="results">
+  <h2>Client <span>Transformations</span></h2>
+  <div class="results-grid container">
+    <div class="result-card">
+      <div class="result-before">Sarah's Bakery</div>
+      <div class="result-after"><span>$</span>89K → <span>$</span>340K</div>
+      <div class="result-change">↑ 282% in 8 months</div>
+    </div>
+    <div class="result-card">
+      <div class="result-before">Tech Agency</div>
+      <div class="result-after"><span>$</span>200K → <span>$</span>1.2M</div>
+      <div class="result-change">↑ 500% in 12 months</div>
+    </div>
+    <div class="result-card">
+      <div class="result-before">E-commerce Brand</div>
+      <div class="result-after"><span>$</span>150K → <span>$</span>890K</div>
+      <div class="result-change">↑ 493% in 10 months</div>
+    </div>
+    <div class="result-card">
+      <div class="result-before">Consulting Firm</div>
+      <div class="result-after"><span>$</span>300K → <span>$</span>1.8M</div>
+      <div class="result-change">↑ 500% in 14 months</div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>What Clients <span>Say</span></h2>
+  <div class="testi-grid container">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Marcus completely transformed how I run my business. From $150K to nearly $900K in under a year. The systems he helped build are incredible."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">JL</div>
+        <div><div class="testi-name">Jessica Liu</div><div class="testi-role">Founder, E-commerce Brand</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Best investment I've made. My agency went from $200K to $1.2M and I actually have time for life now. The ROI has been 50x."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">RM</div>
+        <div><div class="testi-name">Ryan Mitchell</div><div class="testi-role">CEO, Digital Agency</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"If you're serious about scaling, Marcus is your guy. Strategic, practical, and actually delivers results. My only regret is not finding him sooner."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AP</div>
+        <div><div class="testi-name">Amanda Park</div><div class="testi-role">Founder, Consulting Co.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Investment <span>Options</span></h2>
+  <p>Choose the program that matches your business stage</p>
+  <div class="price-grid container">
+    <div class="price-card">
+      <div class="price-name">Business Audit</div>
+      <div class="price-amount"><span>$</span>1,497</div>
+      <div class="price-period">one-time</div>
+      <ul class="price-features">
+        <li>3-hour deep-dive session</li>
+        <li>Full business analysis</li>
+        <li>Custom growth roadmap</li>
+        <li>30-day follow-up call</li>
+      </ul>
+      <button class="price-btn">Get Started</button>
+    </div>
+    <div class="price-card featured">
+      <div class="price-name">6-Figure Blueprint</div>
+      <div class="price-amount"><span>$</span>4,997</div>
+      <div class="price-period">3-month program</div>
+      <ul class="price-features">
+        <li>Weekly 1-on-1 sessions</li>
+        <li>Custom scaling playbook</li>
+        <li>Slack access & support</li>
+        <li>Done-for-you systems</li>
+      </ul>
+      <button class="price-btn">Apply Now</button>
+    </div>
+    <div class="price-card">
+      <div class="price-name">7-Figure Accelerator</div>
+      <div class="price-amount"><span>$</span>12,497</div>
+      <div class="price-period">6-month program</div>
+      <ul class="price-features">
+        <li>Twice-weekly sessions</li>
+        <li>Full team training</li>
+        <li>Executive retreat</li>
+        <li>Lifetime alumni access</li>
+      </ul>
+      <button class="price-btn">Apply Now</button>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <h2>Ready to <span>Scale?</span></h2>
+  <p>Book your free strategy call. Let's analyze your business and create a roadmap to 7 figures.</p>
+  <a href="#" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem">Book Free Strategy Call →</a>
+</section>
+
+<footer>
+  <div class="footer-grid container">
+    <div>
+      <div class="footer-logo"><span>MW</span> Strategy</div>
+      <p class="footer-desc">Former McKinsey consultant helping entrepreneurs scale to 7 figures. Results-driven business coaching.</p>
+    </div>
+    <div>
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#">Business Audit</a></li>
+        <li><a href="#">6-Figure Blueprint</a></li>
+        <li><a href="#">7-Figure Accelerator</a></li>
+        <li><a href="#">Group Mastermind</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Free Course</a></li>
+        <li><a href="#">Podcast</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:marcus@marcuswebb.com">marcus@marcuswebb.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Twitter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <div>© 2024 Marcus Webb Strategy. All rights reserved.</div>
+    <div>Chicago · New York · Remote</div>
+  </div>
+</footer>
+</body>
+</html>

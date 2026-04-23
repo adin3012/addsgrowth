@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maya Sterling | Life Coach & Mentor | Unlock Your True Potential</title>
+<meta name="description" content="Award-winning life coach helping ambitious professionals find clarity, purpose, and direction. Transform your life in 90 days.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2322c55e'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia' font-size='16' font-weight='700' fill='white'%3EMS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--green:#22c55e;--green2:#16a34a;--dark:#1a1a1a;--gray:#666;--light:#f0f0ed;--cream:#faf9f7}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--dark);line-height:1.7}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700}
+.container{max-width:1200px;margin:0 auto;padding:0 5%}
+a{text-decoration:none;color:inherit}
+.green{color:var(--green)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(250,249,247,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(34,197,94,.1)}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700}
+.logo span{color:var(--green)}
+nav ul{display:flex;gap:2.5rem}
+nav a{font-size:.9rem;font-weight:500;color:var(--gray);transition:color .2s}
+nav a:hover{color:var(--dark)}
+.cta-btn{background:var(--green);color:var(--cream);padding:.7rem 1.5rem;border-radius:100px;font-weight:600;font-size:.85rem;transition:background .2s}
+.cta-btn:hover{background:var(--green2)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 5% 4rem;gap:4rem}
+.hero-left{max-width:540px}
+.hero-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(34,197,94,.1);padding:.5rem 1rem;border-radius:100px;font-size:.8rem;color:var(--green);margin-bottom:2rem}
+.hero-pill-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.15;margin-bottom:1.5rem}
+.hero h1 span{display:block;color:var(--green)}
+.hero p{font-size:1.15rem;color:var(--gray);max-width:48ch;margin-bottom:2.5rem;line-height:1.8}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--green);color:var(--cream);padding:1rem 2rem;border-radius:100px;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:background .2s}
+.btn-primary:hover{background:var(--green2)}
+.btn-outline{border:2px solid var(--dark);color:var(--dark);padding:1rem 2rem;border-radius:100px;font-weight:600;font-size:.9rem;transition:all .2s}
+.btn-outline:hover{background:var(--dark);color:var(--cream)}
+.hero-right{position:relative}
+.hero-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 20px 20px;filter:brightness(.95)}
+.hero-decor{position:absolute;top:-2rem;right:-2rem;width:120px;height:120px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--cream);font-weight:700}
+.hero-decor span:first-child{font-size:2rem}
+.hero-decor span:last-child{font-size:.6rem;text-transform:uppercase;letter-spacing:.1em}
+
+/* TRUST */
+.trust{padding:2rem 5%;background:var(--light);text-align:center}
+.trust-logos{display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap;opacity:.5}
+.trust-logos span{font-size:.9rem;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.1em}
+
+/* ABOUT */
+.about{padding:6rem 5%}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-img{position:relative}
+.about-img img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;filter:brightness(.95)}
+.about-exp{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--green);color:var(--cream);padding:1.5rem;border-radius:16px;text-align:center}
+.about-exp span{display:block;font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;line-height:1}
+.about-exp small{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;opacity:.8}
+.about-content h2{font-size:2.5rem;margin-bottom:1.5rem}
+.about-content h2 span{display:block;color:var(--green)}
+.about-content p{color:var(--gray);margin-bottom:1.5rem;font-size:1.05rem}
+.about-sign{font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;color:var(--green);margin-top:2rem}
+
+/* SERVICES */
+.services{padding:6rem 5%;background:var(--light)}
+.services h2{font-size:2.5rem;text-align:center;margin-bottom:.5rem}
+.services > p{text-align:center;color:var(--gray);margin-bottom:3rem;font-size:1.1rem}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.service{background:var(--cream);border-radius:20px;padding:2.5rem;transition:transform .3s,box-shadow .3s}
+.service:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.service-icon{width:70px;height:70px;background:rgba(34,197,94,.1);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1.5rem}
+.service h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:.75rem}
+.service p{color:var(--gray);font-size:.95rem}
+
+/* PROCESS */
+.process{padding:6rem 5%}
+.process h2{font-size:2.5rem;text-align:center;margin-bottom:3rem}
+.process h2 span{color:var(--green)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
+.process-grid::before{content:'';position:absolute;top:40px;left:10%;right:10%;height:2px;background:rgba(34,197,94,.2)}
+.process-step{text-align:center;position:relative}
+.process-num{width:80px;height:80px;background:var(--green);color:var(--cream);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:700;margin:0 auto 1.5rem;position:relative;z-index:1}
+.process-step h3{font-size:1.1rem;margin-bottom:.5rem}
+.process-step p{font-size:.9rem;color:var(--gray)}
+
+/* TESTIMONIALS */
+.testimonials{padding:6rem 5%;background:var(--green);color:var(--cream)}
+.testimonials h2{font-size:2.5rem;text-align:center;margin-bottom:3rem}
+.testimonials h2 span{display:block;opacity:.8}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.testi-card{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:20px;padding:2rem}
+.testi-text{font-size:1.05rem;line-height:1.8;margin-bottom:1.5rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:1rem}
+.testi-avatar{width:50px;height:50px;border-radius:50%;background:var(--cream);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem}
+.testi-name{font-weight:600}
+.testi-role{font-size:.8rem;opacity:.7}
+
+/* PRICING */
+.pricing{padding:6rem 5%;background:var(--cream)}
+.pricing h2{font-size:2.5rem;text-align:center;margin-bottom:.5rem}
+.pricing h2 span{color:var(--green)}
+.pricing > p{text-align:center;color:var(--gray);margin-bottom:3rem}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.price-card{background:var(--light);border-radius:20px;padding:2.5rem;text-align:center;transition:transform .3s}
+.price-card:hover{transform:translateY(-8px)}
+.price-card.featured{background:var(--green);color:var(--cream);position:relative;overflow:hidden}
+.price-card.featured::before{content:'Most Popular';position:absolute;top:1rem;right:-2rem;background:var(--dark);color:var(--cream);padding:.25rem 3rem;font-size:.7rem;text-transform:uppercase;transform:rotate(45deg)}
+.price-name{font-size:.85rem;text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem;opacity:.8}
+.price-amount{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;margin-bottom:.25rem}
+.price-period{font-size:.9rem;margin-bottom:2rem;opacity:.8}
+.price-features{list-style:none;text-align:left;margin-bottom:2rem}
+.price-features li{padding:.75rem 0;border-bottom:1px solid rgba(0,0,0,.05);display:flex;align-items:center;gap:.75rem}
+.price-card.featured .price-features li{border-color:rgba(255,255,255,.1)}
+.price-features li::before{content:'✓';color:var(--green);font-weight:700}
+.price-card.featured .price-features li::before{color:var(--cream)}
+.price-btn{width:100%;padding:1rem;background:var(--green);color:var(--cream);border:none;border-radius:100px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+.price-card.featured .price-btn{background:var(--cream);color:var(--green)}
+.price-btn:hover{background:var(--green2)}
+.price-card.featured .price-btn:hover{background:var(--light)}
+
+/* CTA */
+.cta-section{padding:6rem 5%;text-align:center}
+.cta-section h2{font-size:2.5rem;margin-bottom:1rem}
+.cta-section h2 span{color:var(--green)}
+.cta-section p{color:var(--gray);max-width:50ch;margin:0 auto 2rem;font-size:1.1rem}
+
+/* FOOTER */
+footer{background:var(--dark);color:var(--cream);padding:4rem 5% 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:1rem}
+.footer-logo span{color:var(--green)}
+.footer-desc{color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.7}
+.footer h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.15em;margin-bottom:1.25rem;opacity:.6}
+.footer ul{list-style:none}
+.footer li{margin-bottom:.75rem}
+.footer a{color:rgba(255,255,255,.6);font-size:.9rem;transition:color .2s}
+.footer a:hover{color:var(--green)}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:rgba(255,255,255,.4)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav ul,.cta-btn{display:none}
+  .hero{grid-template-columns:1fr;text-align:center}
+  .hero-left{max-width:100%}
+  .hero-btns{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .services-grid,.testi-grid,.price-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .process-grid::before{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:600px){
+  .process-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="logo">Maya<span>Sterling</span></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#pricing">Investment</a></li>
+  </ul>
+  <a href="#contact" class="cta-btn">Book Free Call</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-pill"><span class="hero-pill-dot"></span> Certified Life Coach & Speaker</div>
+    <h1>Discover the Life<br><span>You Were Born to Live</span></h1>
+    <p>Hi, I'm Maya. I help ambitious professionals break through barriers, find clarity, and create a life that's aligned with their true values and ambitions.</p>
+    <div class="hero-btns">
+      <a href="#pricing" class="btn-primary">Explore Programs →</a>
+      <a href="#about" class="btn-outline">Learn More</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Maya Sterling life coach" class="hero-img">
+    <div class="hero-decor">
+      <span>15+</span>
+      <small>Years</small>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-logos">
+    <span>As Seen In</span>
+    <span>Forbes</span>
+    <span>Entrepreneur</span>
+    <span>Inc.</span>
+    <span>Mindbody</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-grid container">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" alt="Maya coaching session">
+      <div class="about-exp">
+        <span>500+</span>
+        <small>Lives Transformed</small>
+      </div>
+    </div>
+    <div class="about-content">
+      <h2>Your Journey<br><span>Starts Here</span></h2>
+      <p>I've spent 15 years helping high-performers break through limitations and step into their full potential. From Fortune 500 executives to entrepreneurs building empires, I've seen what separates those who thrive from those who just survive.</p>
+      <p>My approach isn't about motivation or positive thinking. It's about strategy, accountability, and deep work that creates lasting change. Ready to transform? Let's talk.</p>
+      <div class="about-sign">— Maya Sterling</div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2>How I Can <span style="color:var(--green)">Help</span></h2>
+  <p>Personalized coaching programs designed for your unique journey</p>
+  <div class="services-grid container">
+    <div class="service">
+      <div class="service-icon">🎯</div>
+      <h3>Clarity & Direction</h3>
+      <p>Feeling stuck or unclear about your path? Together we'll uncover your true values and create a roadmap to your ideal future.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">💪</div>
+      <h3>Confidence Building</h3>
+      <p>Imposter syndrome holding you back? Develop unshakeable confidence and step into leadership roles with ease.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">⚖️</div>
+      <h3>Work-Life Balance</h3>
+      <p>Burnout is real. Learn to achieve excellence without sacrificing your health, relationships, or sanity.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">🚀</div>
+      <h3>Career Transitions</h3>
+      <p>Ready for a change but don't know where to start? Navigate career pivots with confidence and purpose.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">💑</div>
+      <h3>Relationships</h3>
+      <p>Transform your personal and professional relationships. Communication, boundaries, and connection skills that last.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">🌟</div>
+      <h3>Leadership Coaching</h3>
+      <p>For executives ready to level up. Leadership presence, strategic thinking, and team optimization.</p>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <h2>The <span>90-Day</span> Transformation</h2>
+  <div class="process-grid container">
+    <div class="process-step">
+      <div class="process-num">1</div>
+      <h3>Discovery Call</h3>
+      <p>We explore your goals, challenges, and determine if we're the right fit.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">2</div>
+      <h3>Deep Dive</h3>
+      <p>2-hour strategy session to uncover core patterns and create your transformation plan.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">3</div>
+      <h3>Transform</h3>
+      <p>Weekly 1-on-1 sessions, daily support, and actionable breakthroughs.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">4</div>
+      <h3>Empower</h3>
+      <p>Life-long tools and strategies to maintain your growth independently.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>Client <span>Transformations</span></h2>
+  <div class="testi-grid container">
+    <div class="testi-card">
+      <p class="testi-text">"Maya helped me go from being a mid-level manager to a C-suite executive in just 8 months. Her coaching is unlike anything else."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">JC</div>
+        <div><div class="testi-name">Jennifer Collins</div><div class="testi-role">VP of Operations, Tech Startup</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-text">"I was burning out hard. Maya helped me redesign my entire approach to work. Now I'm making more money while working less."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">DM</div>
+        <div><div class="testi-name">David Martinez</div><div class="testi-role">Founder, Design Agency</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-text">"The clarity I gained from Maya's program helped me finally leave a toxic career and start my dream business."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AK</div>
+        <div><div class="testi-name">Amanda Kim</div><div class="testi-role">Entrepreneur & Author</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Investment in <span>Your Transformation</span></h2>
+  <p>Choose the level of support that matches your goals</p>
+  <div class="price-grid container">
+    <div class="price-card">
+      <div class="price-name">Breakthrough</div>
+      <div class="price-amount">$997</div>
+      <div class="price-period">one-time</div>
+      <ul class="price-features">
+        <li>90-minute strategy session</li>
+        <li>Custom action plan</li>
+        <li>2 weeks email support</li>
+        <li>Recording of session</li>
+      </ul>
+      <button class="price-btn">Get Started</button>
+    </div>
+    <div class="price-card featured">
+      <div class="price-name">Transformation</div>
+      <div class="price-amount">$2,997</div>
+      <div class="price-period">90-day program</div>
+      <ul class="price-features">
+        <li>Weekly 1-on-1 sessions</li>
+        <li>Unlimited WhatsApp support</li>
+        <li>Custom workbook & tools</li>
+        <li> Accountability calls</li>
+      </ul>
+      <button class="price-btn">Apply Now</button>
+    </div>
+    <div class="price-card">
+      <div class="price-name">Elite</div>
+      <div class="price-amount">$5,997</div>
+      <div class="price-period">6-month program</div>
+      <ul class="price-features">
+        <li>Twice-weekly sessions</li>
+        <li>Priority 24/7 access</li>
+        <li>Full retreat inclusion</li>
+        <li>Lifetime alumni access</li>
+      </ul>
+      <button class="price-btn">Apply Now</button>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <h2>Your Best Life <span style="color:var(--green)">Awaits</span></h2>
+  <p>Book your free discovery call. No pressure, no sales pitch — just a genuine conversation about where you are and where you want to be.</p>
+  <a href="#" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem">Book Free Discovery Call →</a>
+</section>
+
+<footer>
+  <div class="footer-grid container">
+    <div>
+      <div class="footer-logo">Maya<span>Sterling</span></div>
+      <p class="footer-desc">Certified life coach, speaker, and author. Helping ambitious professionals live their best lives since 2009.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">1-on-1 Coaching</a></li>
+        <li><a href="#">Group Programs</a></li>
+        <li><a href="#">Corporate Workshops</a></li>
+        <li><a href="#">Speaking</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Maya</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Investment</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Podcast</a></li>
+        <li><a href="mailto:maya@mayasterling.com">maya@mayasterling.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <div>© 2024 Maya Sterling Coaching. All rights reserved.</div>
+    <div>Los Angeles · New York · Worldwide</div>
+  </div>
+</footer>
+</body>
+</html>

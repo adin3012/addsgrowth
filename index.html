@@ -41,13 +41,7 @@
   "priceRange": "$599 - $2,399",
   "currenciesAccepted": "USD",
   "serviceType": ["Web Design", "SEO", "Web Development", "Landing Pages"],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "40",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
+  
   "offers": [
     {
       "@type": "Offer",
@@ -492,7 +486,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 /* PORTFOLIO */
 .port-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:2rem}
 .port-grid{
-  display:grid;grid-template-columns:1fr 1fr 1fr;
+  display:grid;grid-template-columns:repeat(4,1fr);
   gap:1px;background:var(--ln);
   border:1px solid var(--ln);border-radius:var(--r12);overflow:hidden;
 }
@@ -691,8 +685,9 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
   .stats{grid-template-columns:repeat(2,1fr)}
   .stt:nth-child(2){border-right:none}
   .stt:nth-child(3){border-top:1px solid var(--ln)}
+  .stt:nth-child(4){border-top:1px solid var(--ln);border-right:none}
   .svc-grid{grid-template-columns:repeat(2,1fr)}
-  .port-grid{grid-template-columns:1fr}
+  .port-grid{grid-template-columns:1fr 1fr}
   .pi:first-child img,.pi img,.pi video{aspect-ratio:16/9}
   .price-grid{grid-template-columns:1fr}
   .testimonials-grid{grid-template-columns:repeat(2,1fr)}
@@ -805,8 +800,9 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
   </button>
 </nav>
 
+<main id="main">
 <!-- HERO -->
-<section class="hero" id="main" aria-label="Hero">
+<section class="hero" aria-label="Hero">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-glow" aria-hidden="true"></div>
 
@@ -858,7 +854,7 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
         </div>
         <div class="dc-stats">
           <div class="dc-stat"><div class="dc-sv">40<em>+</em></div><div class="dc-sl">Projects</div></div>
-          <div class="dc-stat"><div class="dc-sv"><em>$</em>499</div><div class="dc-sl">Starting</div></div>
+          <div class="dc-stat"><div class="dc-sv"><em>$</em>599</div><div class="dc-sl">Starting</div></div>
           <div class="dc-stat"><div class="dc-sv">7<em>d</em></div><div class="dc-sl">Avg. Delivery</div></div>
         </div>
         <div class="dc-chart">
@@ -943,20 +939,45 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
     <p class="sp" style="margin-bottom:0;max-width:38ch">Every project we build is designed to do one thing — grow your business.</p>
   </div>
   <div class="port-grid">
-    <div class="pi rv" role="link" tabindex="0" aria-label="View GetFitWithAdin project" onclick="openProject('https://getfitwithadin.com')" onkeydown="handlePiKey(event,'https://getfitwithadin.com')">
+    <div class="pi rv" role="link" tabindex="0" aria-label="View fitness coach portfolio" onclick="openProject('client-sites/fitness-coach.html')" onkeydown="handlePiKey(event,'client-sites/fitness-coach.html')">
       <div class="pi-chip">Fitness</div>
-      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&q=80&fit=crop" alt="GetFitWithAdin fitness coaching website" loading="lazy">
-      <div class="po"><div class="po-tag">Coaching · WhatsApp</div><div class="po-name">GetFitWithAdin</div><div class="po-stat">getfitwithadin.com ↗</div></div>
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&q=80&fit=crop" alt="Fitness coach portfolio" loading="lazy">
+      <div class="po"><div class="po-tag">Fitness · NYC</div><div class="po-name">Jake Rivera Fitness</div><div class="po-stat">client-sites/fitness-coach.html ↗</div></div>
     </div>
-    <div class="pi rv" role="link" tabindex="0" aria-label="View Himanshu Deka project" onclick="openProject('https://himanshudeka.com')" onkeydown="handlePiKey(event,'https://himanshudeka.com')">
-      <div class="pi-chip">Coach</div>
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&fit=crop" alt="Himanshu Deka coaching portfolio website" loading="lazy">
-      <div class="po"><div class="po-tag">Coach · Portfolio</div><div class="po-name">Himanshu Deka</div><div class="po-stat">himanshudeka.com ↗</div></div>
+    <div class="pi rv" role="link" tabindex="0" aria-label="View life coach portfolio" onclick="openProject('client-sites/life-coach.html')" onkeydown="handlePiKey(event,'client-sites/life-coach.html')">
+      <div class="pi-chip">Life</div>
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&fit=crop" alt="Life coach portfolio" loading="lazy">
+      <div class="po"><div class="po-tag">Life Coach · LA</div><div class="po-name">Maya Sterling</div><div class="po-stat">client-sites/life-coach.html ↗</div></div>
     </div>
-    <div class="pi rv" role="link" tabindex="0" aria-label="View CoachFlow demo" onclick="openProject('coachflow.mp4')" onkeydown="handlePiKey(event,'coachflow.mp4')">
-      <div class="pi-chip">SaaS</div>
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&fit=crop" alt="CoachFlow SaaS CRM dashboard" loading="lazy">
-      <div class="po"><div class="po-tag">CRM · Flask</div><div class="po-name">CoachFlow</div><div class="po-stat">Click to watch demo ↗</div></div>
+    <div class="pi rv" role="link" tabindex="0" aria-label="View business coach portfolio" onclick="openProject('client-sites/business-coach.html')" onkeydown="handlePiKey(event,'client-sites/business-coach.html')">
+      <div class="pi-chip">Business</div>
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80&fit=crop" alt="Business coach portfolio" loading="lazy">
+      <div class="po"><div class="po-tag">Strategy · Chicago</div><div class="po-name">Marcus Webb</div><div class="po-stat">client-sites/business-coach.html ↗</div></div>
+    </div>
+    <div class="pi rv" role="link" tabindex="0" aria-label="View wellness coach portfolio" onclick="openProject('client-sites/wellness-coach.html')" onkeydown="handlePiKey(event,'client-sites/wellness-coach.html')">
+      <div class="pi-chip">Wellness</div>
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&fit=crop" alt="Wellness coach portfolio" loading="lazy">
+      <div class="po"><div class="po-tag">Wellness · Portland</div><div class="po-name">Dr. Sophia Chen</div><div class="po-stat">client-sites/wellness-coach.html ↗</div></div>
+    </div>
+    <div class="pi rv" role="link" tabindex="0" aria-label="View career coach portfolio" onclick="openProject('client-sites/career-coach.html')" onkeydown="handlePiKey(event,'client-sites/career-coach.html')">
+      <div class="pi-chip">Career</div>
+      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80&fit=crop" alt="Career coach portfolio" loading="lazy">
+      <div class="po"><div class="po-tag">Career · SF</div><div class="po-name">Aisha Williams</div><div class="po-stat">client-sites/career-coach.html ↗</div></div>
+    </div>
+    <div class="pi rv" role="link" tabindex="0" aria-label="View nutrition coach portfolio" onclick="openProject('client-sites/nutrition-coach.html')" onkeydown="handlePiKey(event,'client-sites/nutrition-coach.html')">
+      <div class="pi-chip">Nutrition</div>
+      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&fit=crop" alt="Nutrition coach portfolio" loading="lazy">
+      <div class="po"><div class="po-tag">Nutrition · LA</div><div class="po-name">Ryan Park</div><div class="po-stat">client-sites/nutrition-coach.html ↗</div></div>
+    </div>
+    <div class="pi rv" role="link" tabindex="0" aria-label="View executive coach portfolio" onclick="openProject('client-sites/executive-coach.html')" onkeydown="handlePiKey(event,'client-sites/executive-coach.html')">
+      <div class="pi-chip">Executive</div>
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80&fit=crop" alt="Executive coach portfolio" loading="lazy">
+      <div class="po"><div class="po-tag">Executive · NYC</div><div class="po-name">Victoria Reynolds</div><div class="po-stat">client-sites/executive-coach.html ↗</div></div>
+    </div>
+    <div class="pi rv" role="link" tabindex="0" aria-label="View dating coach portfolio" onclick="openProject('client-sites/dating-coach.html')" onkeydown="handlePiKey(event,'client-sites/dating-coach.html')">
+      <div class="pi-chip">Dating</div>
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80&fit=crop" alt="Dating coach portfolio" loading="lazy">
+      <div class="po"><div class="po-tag">Dating · LA</div><div class="po-name">Elena Rose</div><div class="po-stat">client-sites/dating-coach.html ↗</div></div>
     </div>
   </div>
 </section>
@@ -982,12 +1003,12 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
     </article>
     <article class="tc">
       <div class="tc-stars" aria-label="5 out of 5 stars">★★★★★</div>
-      <blockquote class="tc-q">"Professional, creative, and incredibly talented. They transformed my fitness coaching business with a website that actually converts clients. Best investment for my business."</blockquote>
+      <blockquote class="tc-q">"The team built my entire online coaching platform in under 6 weeks — client logins, workout plans, WhatsApp automation, everything. My clients love it and it saves me hours every week."</blockquote>
       <div class="tc-auth">
-        <div class="tc-av" style="background:#3b82f620;color:#3b82f6;" aria-hidden="true">A</div>
+        <div class="tc-av" style="background:#3b82f620;color:#3b82f6;" aria-hidden="true">P</div>
         <div>
-          <div class="tc-name">Adin Ankur Saikia</div>
-          <div class="tc-role">ICN Gold Medalist · getfitwithadin.com</div>
+          <div class="tc-name">Prateek Talukdar</div>
+          <div class="tc-role">IFBB Pro Coach · Dubai, UAE</div>
         </div>
       </div>
     </article>
@@ -1129,19 +1150,21 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
   <div class="cta-r">
     <div class="cta-card">
       <div id="fWrap">
+        <form id="cForm" novalidate>
         <label class="fl-label" for="fN">Your name</label>
-        <input class="fl-input" type="text" placeholder="Jane Smith" id="fN" autocomplete="name" maxlength="100">
+        <input class="fl-input" type="text" placeholder="Jane Smith" id="fN" name="name" autocomplete="name" maxlength="100">
         <div class="fl-err" id="fNErr">Please enter your name.</div>
         <label class="fl-label" for="fE">Email address</label>
-        <input class="fl-input" type="email" placeholder="jane@yourbusiness.com" id="fE" autocomplete="email">
+        <input class="fl-input" type="email" placeholder="jane@yourbusiness.com" id="fE" name="email" autocomplete="email">
         <div class="fl-err" id="fEErr">Please enter a valid email address.</div>
         <label class="fl-label" for="fU">Website URL <span style="opacity:.4">(optional)</span></label>
-        <input class="fl-input" type="url" placeholder="https://yourbusiness.com" id="fU" autocomplete="url">
-        <button class="fl-submit" type="button" id="fBtn" onclick="submitF()">
+        <input class="fl-input" type="url" placeholder="https://yourbusiness.com" id="fU" name="website" autocomplete="url">
+        <button class="fl-submit" type="submit" id="fBtn">
           Send Message →
           <span class="fl-spinner" aria-hidden="true"></span>
         </button>
         <div class="fl-note">We reply within 24 hours · No spam, ever.</div>
+        </form>
       </div>
       <div class="fl-ok" id="fOk" role="alert">
         <span class="fl-ok-ic" aria-hidden="true">✓</span>
@@ -1151,6 +1174,8 @@ footer{background:var(--bg1);border-top:1px solid var(--ln);padding:4.5rem 5% 2r
     </div>
   </div>
 </div>
+
+</main>
 
 <!-- FOOTER -->
 <footer role="contentinfo">
@@ -1229,7 +1254,7 @@ function closeD(){
 }
 
 function openProject(url){
-  window.open(url,'_blank','noopener,noreferrer');
+  window.open(url,'_blank','noopener');
 }
 
 function handlePiKey(e,url){
@@ -1272,7 +1297,16 @@ var io=new IntersectionObserver(function(entries){
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 
 /* Form submission */
+var _lastSubmit=0;
+(function(){
+  var f=document.getElementById('cForm');
+  if(f)f.addEventListener('submit',function(e){e.preventDefault();submitF();});
+}());
+
 function submitF(){
+  var now=Date.now();
+  if(now-_lastSubmit<30000)return; // 30s cooldown
+
   var nameEl=document.getElementById('fN');
   var emailEl=document.getElementById('fE');
   var nameErr=document.getElementById('fNErr');
@@ -1293,7 +1327,7 @@ function submitF(){
     nameEl.focus();
     valid=false;
   }
-  if(!email||!email.includes('@')||!email.includes('.')){
+  if(!email||!emailEl.validity.valid){
     emailEl.classList.add('err');
     emailErr.classList.add('show');
     if(valid)emailEl.focus();
@@ -1301,6 +1335,7 @@ function submitF(){
   }
   if(!valid)return;
 
+  _lastSubmit=now;
   btn.disabled=true;
   btn.classList.add('loading');
 
@@ -1310,17 +1345,44 @@ function submitF(){
   if(window.gtag){gtag('event','generate_lead',{method:'website_form'});}
 
   Promise.allSettled([
-    emailjs.send("service_0eu8w7c","template_7v4pjdk",payload),
+    typeof emailjs!=='undefined'?emailjs.send("service_0eu8w7c","template_7v4pjdk",payload):Promise.reject('emailjs not loaded'),
     fetch("https://script.google.com/macros/s/AKfycbzOXKcXai9-bUO_VnCa8T6y2XbSvqE-02fSaU0_a27eDfT30eaguajNhrFh5Z48TWAv/exec",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify(Object.assign({},payload,{date:new Date().toISOString()}))
     })
-  ]).finally(function(){
-    document.getElementById('fWrap').style.display='none';
-    document.getElementById('fOk').style.display='block';
+  ]).then(function(results){
+    var anyOk=results.some(function(r){return r.status==='fulfilled';});
+    if(anyOk){
+      document.getElementById('fWrap').style.display='none';
+      document.getElementById('fOk').style.display='block';
+    } else {
+      btn.disabled=false;
+      btn.classList.remove('loading');
+      btn.textContent='Try Again →';
+      _lastSubmit=0;
+    }
   });
 }
+
+/* Nav active state on scroll */
+(function(){
+  var secs=document.querySelectorAll('main section[id],#contact');
+  var links=document.querySelectorAll('.nav-link');
+  function setActive(id){
+    links.forEach(function(l){
+      var href=l.getAttribute('href');
+      l.classList.toggle('active',(href==='#'+id)||(id===''&&href==='#'));
+    });
+  }
+  var sio=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting) setActive(e.target.id||'');
+    });
+  },{threshold:.25,rootMargin:'-64px 0px -30% 0px'});
+  secs.forEach(function(s){sio.observe(s);});
+  document.querySelector('.hero')&&sio.observe(document.querySelector('.hero'));
+}());
 
 /* Contact options modal */
 function showContactOpts(){
@@ -1339,7 +1401,14 @@ function showContactOpts(){
     +'</div>';
   document.body.appendChild(m);
   m.onclick=function(e){if(e.target===m)m.remove();};
-  m.querySelector('a').focus();
+  var focusable=m.querySelectorAll('a,button');
+  focusable[0].focus();
+  m.addEventListener('keydown',function(e){
+    if(e.key!=='Tab')return;
+    var first=focusable[0],last=focusable[focusable.length-1];
+    if(e.shiftKey){if(document.activeElement===first){e.preventDefault();last.focus();}}
+    else{if(document.activeElement===last){e.preventDefault();first.focus();}}
+  });
 }
 </script>
 </body>

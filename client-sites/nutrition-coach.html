@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryan Park | Nutrition & Gut Health Expert | Eat for Energy</title>
+<meta name="description" content="Clinical nutritionist specializing in gut health, weight management, and sustainable eating. 500+ clients transformed through personalized meal plans.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ea580c'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia' font-size='14' font-weight='700' fill='white'%3ERP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf7f2;--orange:#ea580c;--amber:#f59e0b;--dark:#1c1917;--gray:#78716c;--cream:#faf7f2;--light:#fef3e7;--green:#22c55e}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
+h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:700}
+.container{max-width:1200px;margin:0 auto;padding:0 5%}
+a{text-decoration:none;color:inherit}
+.orange{color:var(--orange)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(250,247,242,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(234,88,12,.1)}
+.logo{font-family:'Poppins',sans-serif;font-size:1.4rem;font-weight:700;color:var(--dark)}
+.logo span{color:var(--orange)}
+nav ul{display:flex;gap:2.5rem}
+nav a{font-size:.9rem;font-weight:500;color:var(--gray);transition:color .2s}
+nav a:hover{color:var(--dark)}
+.cta-btn{background:var(--orange);color:var(--cream);padding:.65rem 1.5rem;border-radius:8px;font-weight:600;font-size:.85rem;transition:background .2s}
+.cta-btn:hover{background:#c2410c}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:5rem 5% 4rem;gap:4rem}
+.hero-left{max-width:520px}
+.hero-eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--orange);margin-bottom:1.5rem;font-weight:600}
+.hero h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.15;margin-bottom:1.5rem}
+.hero h1 span{color:var(--orange)}
+.hero p{font-size:1.1rem;color:var(--gray);max-width:48ch;margin-bottom:2rem;line-height:1.8}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--orange);color:var(--cream);padding:1rem 2rem;border-radius:8px;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:background .2s}
+.btn-primary:hover{background:#c2410c}
+.btn-outline{border:2px solid var(--dark);color:var(--dark);padding:1rem 2rem;border-radius:8px;font-weight:600;font-size:.9rem;transition:all .2s}
+.btn-outline:hover{background:var(--dark);color:var(--cream)}
+.hero-right{position:relative}
+.hero-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px 24px 100px 100px;filter:brightness(.95)}
+.hero-badge{position:absolute;bottom:2rem;left:-1.5rem;background:var(--cream);padding:1.25rem 1.75rem;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.08)}
+.hero-badge span{display:block;font-family:'Poppins',sans-serif;font-size:1.75rem;font-weight:700;color:var(--orange);line-height:1}
+.hero-badge small{font-size:.7rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em}
+
+/* STATS */
+.stats{padding:3rem 5%;background:var(--orange);color:var(--cream)}
+.stats-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:2rem;text-align:center}
+.stat-item span{display:block;font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700}
+.stat-item small{font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;opacity:.8}
+
+/* ABOUT */
+.about{padding:6rem 5%}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-img{position:relative}
+.about-img img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;filter:brightness(.95)}
+.about-decor{position:absolute;top:-1rem;left:-1rem;width:80px;height:80px;background:var(--orange);border-radius:50%;opacity:.2}
+.about-badge{position:absolute;bottom:2rem;right:-1.5rem;background:var(--orange);color:var(--cream);padding:1.25rem;border-radius:16px;text-align:center}
+.about-badge span{display:block;font-family:'Poppins',sans-serif;font-size:2rem;font-weight:700;line-height:1}
+.about-badge small{font-size:.65rem;opacity:.8;text-transform:uppercase}
+.about-content h2{font-size:2.25rem;margin-bottom:1.5rem}
+.about-content h2 span{color:var(--orange)}
+.about-content p{color:var(--gray);margin-bottom:1.25rem;font-size:1rem;line-height:1.8}
+.about-credentials{display:flex;gap:1.5rem;margin-top:2rem;flex-wrap:wrap}
+.credential{background:var(--light);padding:1rem 1.5rem;border-radius:12px;display:flex;align-items:center;gap:1rem}
+.credential-icon{width:40px;height:40px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+.credential-text{font-size:.85rem;font-weight:600}
+
+/* PHILOSOPHY */
+.philosophy{padding:6rem 5%;background:var(--light)}
+.philosophy h2{font-size:2.25rem;text-align:center;margin-bottom:.5rem}
+.philosophy h2 span{color:var(--orange)}
+.philosophy > p{text-align:center;color:var(--gray);margin-bottom:3rem;max-width:55ch;margin-left:auto;margin-right:auto}
+.philosophy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.philosophy-card{background:var(--cream);border-radius:20px;padding:2.5rem;text-align:center;transition:transform .3s,box-shadow .3s}
+.philosophy-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,.06)}
+.philosophy-icon{width:80px;height:80px;background:linear-gradient(135deg,var(--orange),var(--amber));border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 1.5rem}
+.philosophy-card h3{font-size:1.2rem;margin-bottom:.75rem;color:var(--dark)}
+.philosophy-card p{font-size:.9rem;color:var(--gray)}
+
+/* SERVICES */
+.services{padding:6rem 5%}
+.services h2{font-size:2.25rem;text-align:center;margin-bottom:.5rem}
+.services h2 span{color:var(--orange)}
+.services > p{text-align:center;color:var(--gray);margin-bottom:3rem}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service{background:var(--cream);border:1px solid rgba(234,88,12,.2);border-radius:16px;padding:2rem;transition:border-color .3s}
+.service:hover{border-color:var(--orange)}
+.service-icon{width:50px;height:50px;background:var(--light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem}
+.service h3{font-size:1.1rem;margin-bottom:.75rem}
+.service p{font-size:.9rem;color:var(--gray);line-height:1.7}
+
+/* TRANSFORMATIONS */
+.transformations{padding:6rem 5%;background:var(--light)}
+.transformations h2{font-size:2.25rem;text-align:center;margin-bottom:3rem}
+.transformations h2 span{color:var(--orange)}
+.trans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.trans-card{background:var(--cream);border-radius:16px;padding:2rem;text-align:center;border:1px solid rgba(234,88,12,.1)}
+.trans-name{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);margin-bottom:.5rem}
+.trans-result{font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:700;color:var(--green);margin-bottom:.25rem}
+.trans-story{font-size:.85rem;color:var(--gray)}
+
+/* PRICING */
+.pricing{padding:6rem 5%}
+.pricing h2{font-size:2.25rem;text-align:center;margin-bottom:.5rem}
+.pricing h2 span{color:var(--orange)}
+.pricing > p{text-align:center;color:var(--gray);margin-bottom:3rem}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.price-card{background:var(--light);border-radius:20px;padding:2.5rem;text-align:center;transition:transform .3s}
+.price-card:hover{transform:translateY(-8px)}
+.price-card.featured{background:var(--orange);color:var(--cream)}
+.price-name{font-size:.85rem;text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem;opacity:.8}
+.price-amount{font-family:'Poppins',sans-serif;font-size:3rem;font-weight:700;margin-bottom:.25rem}
+.price-period{font-size:.9rem;margin-bottom:2rem;opacity:.8}
+.price-features{list-style:none;text-align:left;margin-bottom:2rem}
+.price-features li{padding:.6rem 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.9rem;display:flex;align-items:center;gap:.75rem}
+.price-card.featured .price-features li{border-color:rgba(255,255,255,.15)}
+.price-features li::before{content:'✓';font-weight:700;color:var(--orange)}
+.price-card.featured .price-features li::before{color:var(--cream)}
+.price-btn{width:100%;padding:1rem;background:var(--orange);color:var(--cream);border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:background .2s}
+.price-card.featured .price-btn{background:var(--cream);color:var(--orange)}
+.price-btn:hover{background:#c2410c}
+.price-card.featured .price-btn:hover{background:var(--light)}
+
+/* CTA */
+.cta-section{padding:6rem 5%;text-align:center}
+.cta-section h2{font-size:2.25rem;margin-bottom:1rem}
+.cta-section h2 span{color:var(--orange)}
+.cta-section p{color:var(--gray);max-width:50ch;margin:0 auto 2rem;font-size:1.05rem}
+
+/* FOOTER */
+footer{background:var(--dark);color:var(--cream);padding:4rem 5% 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:1rem}
+.footer-logo span{color:var(--orange)}
+.footer-desc{font-size:.9rem;opacity:.7;line-height:1.7}
+.footer h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;margin-bottom:1.25rem;opacity:.5}
+.footer ul{list-style:none}
+.footer li{margin-bottom:.75rem}
+.footer a{font-size:.9rem;opacity:.7;transition:opacity .2s}
+.footer a:hover{opacity:1}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;font-size:.8rem;opacity:.5}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav ul,.cta-btn{display:none}
+  .hero{grid-template-columns:1fr;text-align:center}
+  .hero-left{max-width:100%}
+  .hero-btns{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .philosophy-grid,.services-grid,.trans-grid,.price-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="logo">Ryan<span>Park</span></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <a href="#contact" class="cta-btn">Get Started</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Clinical Nutritionist & Gut Health Expert</div>
+    <h1>Eat for <span>Energy</span></h1>
+    <p>Personalized nutrition that actually works. Nofad diets. No deprivation. Just sustainable eating that transforms your health, energy, and relationship with food.</p>
+    <div class="hero-btns">
+      <a href="#pricing" class="btn-primary">View Plans →</a>
+      <a href="#philosophy" class="btn-outline">My Approach</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Ryan Park nutrition coach" class="hero-img">
+    <div class="hero-badge">
+      <span>500+</span>
+      <small>Clients Transformed</small>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-grid container">
+    <div class="stat-item"><span>500+</span><small>Lives Transformed</small></div>
+    <div class="stat-item"><span>10+</span><small>Years Experience</small></div>
+    <div class="stat-item"><span>15K+</span><small>Pounds Lost</small></div>
+    <div class="stat-item"><span>97%</span><small>Success Rate</small></div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-grid container">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Ryan Park">
+      <div class="about-decor"></div>
+      <div class="about-badge">
+        <span>MS</span>
+        <small>Nutrition Science</small>
+      </div>
+    </div>
+    <div class="about-content">
+      <h2>Your Nutrition <span>Partner</span></h2>
+      <p>I'm Ryan, a clinical nutritionist with over 10 years of experience helping people transform their health through sustainable eating. My approach isn't about short-term fixes - it's about building a healthy relationship with food that lasts a lifetime.</p>
+      <p>Whether you want to lose weight, heal your gut, manage a health condition, or simply have more energy, I'll create a personalized plan that fits your lifestyle, tastes, and goals.</p>
+      <div class="about-credentials">
+        <div class="credential">
+          <div class="credential-icon">🎓</div>
+          <div class="credential-text">MS Nutrition Science</div>
+        </div>
+        <div class="credential">
+          <div class="credential-icon">📋</div>
+          <div class="credential-text">Registered Dietitian</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy" id="philosophy">
+  <h2>My <span>Philosophy</span></h2>
+  <p>Nutrition isn't one-size-fits-all. Here's how I approach sustainable transformation</p>
+  <div class="philosophy-grid container">
+    <div class="philosophy-card">
+      <div class="philosophy-icon">🌱</div>
+      <h3>Whole Foods First</h3>
+      <p>Focus on real, minimally processed foods. Build your plate around nature, not nutrition labels.</p>
+    </div>
+    <div class="philosophy-card">
+      <div class="philosophy-icon">🎯</div>
+      <h3>Personalized Plans</h3>
+      <p>Your body is unique. Your nutrition plan should be too. No cookie-cutter diets.</p>
+    </div>
+    <div class="philosophy-card">
+      <div class="philosophy-icon">🔄</div>
+      <h3>Sustainable Change</h3>
+      <p>Quick fixes don't last. I help you build habits that stick for life, not just a few weeks.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2>How I <span>Help</span></h2>
+  <p>Comprehensive nutrition programs tailored to your unique needs and goals</p>
+  <div class="services-grid container">
+    <div class="service">
+      <div class="service-icon">🔬</div>
+      <h3>Gut Health Reset</h3>
+      <p>Heal your gut using evidence-based protocols. Reduce bloating, improve digestion, and boost immunity.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">⚖️</div>
+      <h3>Weight Management</h3>
+      <p>Sustainable fat loss without deprivation. Learn to eat for your body, not against it.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">💪</div>
+      <h3>Sports Nutrition</h3>
+      <p>Fuel your training optimally. From marathon runners to gym beginners, I'll optimize your performance.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">🩺</div>
+      <h3>Medical Nutrition</h3>
+      <p>Nutrition therapy for diabetes, heart health, PCOS, thyroid conditions, and more.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">🥗</div>
+      <h3>Meal Planning</h3>
+      <p>Custom meal plans with recipes, shopping lists, and prep guides. Healthy eating made simple.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">🧠</div>
+      <h3>Mindset & Habits</h3>
+      <p>Address the psychological side of eating. Build a healthy relationship with food forever.</p>
+    </div>
+  </div>
+</section>
+
+<section class="transformations">
+  <h2>Client <span>Transformations</span></h2>
+  <div class="trans-grid container">
+    <div class="trans-card">
+      <div class="trans-name">Sarah's Journey</div>
+      <div class="trans-result">-65 lbs</div>
+      <div class="trans-story">Healed gut, lost weight, regained energy in 8 months</div>
+    </div>
+    <div class="trans-card">
+      <div class="trans-name">Mike's Goal</div>
+      <div class="trans-result">-40 lbs</div>
+      <div class="trans-story">Reversed pre-diabetes through diet alone</div>
+    </div>
+    <div class="trans-card">
+      <div class="trans-name">Lisa's Reset</div>
+      <div class="trans-result">Clear skin</div>
+      <div class="trans-story">Healed chronic acne through gut healing protocol</div>
+    </div>
+    <div class="trans-card">
+      <div class="trans-name">David's Performance</div>
+      <div class="trans-result">PR marathon</div>
+      <div class="trans-story">Optimized nutrition for peak athletic performance</div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Investment in <span>Your Health</span></h2>
+  <p>Choose the nutrition plan that fits your goals</p>
+  <div class="price-grid container">
+    <div class="price-card">
+      <div class="price-name">Starter</div>
+      <div class="price-amount">$197</div>
+      <div class="price-period">one-time plan</div>
+      <ul class="price-features">
+        <li>Custom meal plan</li>
+        <li>Shopping list</li>
+        <li>Recipe collection</li>
+        <li>2 weeks support</li>
+      </ul>
+      <button class="price-btn">Get Started</button>
+    </div>
+    <div class="price-card featured">
+      <div class="price-name">Transformation</div>
+      <div class="price-amount">$797</div>
+      <div class="price-period">3-month program</div>
+      <ul class="price-features">
+        <li>Personalized nutrition plan</li>
+        <li>Weekly check-ins</li>
+        <li>Gut health protocol</li>
+        <li>Unlimited messaging</li>
+      </ul>
+      <button class="price-btn">Get Started</button>
+    </div>
+    <div class="price-card">
+      <div class="price-name">VIP</div>
+      <div class="price-amount">$1,997</div>
+      <div class="price-period">6-month program</div>
+      <ul class="price-features">
+        <li>Twice-weekly sessions</li>
+        <li>Lab work review</li>
+        <li>Supplement protocol</li>
+        <li>Lifetime maintenance</li>
+      </ul>
+      <button class="price-btn">Apply Now</button>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <h2>Start Your <span>Transformation</span></h2>
+  <p>Book your free nutrition consultation. Let's discuss your goals and create your roadmap to better health.</p>
+  <a href="#" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem">Book Free Consultation →</a>
+</section>
+
+<footer>
+  <div class="footer-grid container">
+    <div>
+      <div class="footer-logo">Ryan<span>Park</span></div>
+      <p class="footer-desc">Clinical nutritionist helping you achieve optimal health through personalized, sustainable nutrition.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Gut Health</a></li>
+        <li><a href="#">Weight Loss</a></li>
+        <li><a href="#">Sports Nutrition</a></li>
+        <li><a href="#">Meal Planning</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Free Food Guide</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="mailto:ryan@ryanparknutrition.com">ryan@ryanparknutrition.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <div>© 2024 Ryan Park Nutrition. All rights reserved.</div>
+    <div>Los Angeles · Virtual Worldwide</div>
+  </div>
+</footer>
+</body>
+</html>
