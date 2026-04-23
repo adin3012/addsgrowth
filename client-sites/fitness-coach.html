@@ -132,6 +132,14 @@ footer{background:var(--dark);padding:4rem 5% 2rem;border-top:1px solid rgba(249
 .footer-social{display:flex;gap:1rem}
 .footer-social a{color:var(--gray);font-size:1.25rem}
 
+/* MOBILE NAV */
+.mobile-nav{display:none;position:fixed;inset:0;z-index:200;background:rgba(10,10,10,.98);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mobile-nav.open{display:flex}
+.mobile-nav-close{position:absolute;top:1.5rem;right:5%;font-size:1.4rem;background:none;border:none;color:#888;cursor:pointer;padding:.4rem .6rem}
+.mobile-nav a{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.04em;transition:color .2s}
+.mobile-nav a:hover{color:var(--orange)}
+.mobile-nav .mn-cta{font-size:1.1rem;color:var(--orange);border:1px solid rgba(249,115,22,.4);padding:.65rem 2rem;border-radius:4px;text-transform:uppercase;letter-spacing:.08em;margin-top:.5rem}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   nav ul,.cta-btn{display:none}
@@ -163,6 +171,16 @@ footer{background:var(--dark);padding:4rem 5% 2rem;border-top:1px solid rgba(249
 </style>
 </head>
 <body>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close">✕</button>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#results" onclick="closeMobileNav()">Results</a>
+  <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
+  <a href="#contact" onclick="closeMobileNav()" class="mn-cta">Book Free Call</a>
+</div>
+
 <nav>
   <a href="#" class="logo">Jake<span>Rivera</span></a>
   <ul>
@@ -172,7 +190,7 @@ footer{background:var(--dark);padding:4rem 5% 2rem;border-top:1px solid rgba(249
     <li><a href="#pricing">Pricing</a></li>
   </ul>
   <a href="#contact" class="cta-btn">Book Free Call</a>
-  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" onclick="openMobileNav()" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 
 <section class="hero">
@@ -387,5 +405,10 @@ footer{background:var(--dark);padding:4rem 5% 2rem;border-top:1px solid rgba(249
     </div>
   </div>
 </footer>
+<script>
+function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.body.style.overflow='hidden'}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileNav()});
+</script>
 </body>
 </html>

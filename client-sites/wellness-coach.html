@@ -142,14 +142,28 @@ footer{background:var(--forest);color:var(--cream);padding:4rem 5% 2rem}
 .footer a:hover{opacity:1}
 .footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;font-size:.8rem;opacity:.6}
 
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--forest)}
+/* MOBILE NAV */
+.mobile-nav{display:none;position:fixed;inset:0;z-index:200;background:rgba(45,58,45,.98);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mobile-nav.open{display:flex}
+.mobile-nav-close{position:absolute;top:1.5rem;right:5%;font-size:1.4rem;background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;padding:.4rem .6rem}
+.mobile-nav a{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;color:#fff;transition:color .2s}
+.mobile-nav a:hover{color:var(--sage)}
+.mobile-nav .mn-cta{font-size:1.25rem;color:var(--sage);border:1px solid rgba(167,196,160,.4);padding:.65rem 2rem;border-radius:100px;margin-top:.5rem}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   nav ul,.cta-btn{display:none}
+  .hamburger{display:flex}
   .hero{grid-template-columns:1fr;text-align:center;padding:6rem 5% 3rem;gap:2rem}
+  .hero-right{display:none}
   .hero-left{max-width:100%}
   .hero-btns{justify-content:center}
   .hero-left p{margin-left:auto;margin-right:auto}
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important}
   .philosophy-grid,.services-grid,.testi-grid,.price-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
 }
@@ -168,6 +182,16 @@ footer{background:var(--forest);color:var(--cream);padding:4rem 5% 2rem}
 </style>
 </head>
 <body>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close">✕</button>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#philosophy" onclick="closeMobileNav()">Philosophy</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#pricing" onclick="closeMobileNav()">Investment</a>
+  <a href="#contact" onclick="closeMobileNav()" class="mn-cta">Book Consultation</a>
+</div>
+
 <nav>
   <a href="#" class="logo">Dr. Sophia Chen</a>
   <ul>
@@ -177,6 +201,7 @@ footer{background:var(--forest);color:var(--cream);padding:4rem 5% 2rem}
     <li><a href="#pricing">Investment</a></li>
   </ul>
   <a href="#contact" class="cta-btn">Book Consultation</a>
+  <button class="hamburger" onclick="openMobileNav()" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 
 <section class="hero">
@@ -228,7 +253,7 @@ footer{background:var(--forest);color:var(--cream);padding:4rem 5% 2rem}
 <section class="philosophy" id="philosophy">
   <h2>The <span>4 Pillars</span> of Wellness</h2>
   <p>My approach is grounded in four foundational principles that address your complete well-being</p>
-  <div class="philosophy-grid container">
+  <div class="philosophy-grid container" style="grid-template-columns:repeat(4,1fr)">
     <div class="philosophy-card">
       <div class="philosophy-icon">🌿</div>
       <h3>Nourish</h3>
@@ -243,6 +268,11 @@ footer{background:var(--forest);color:var(--cream);padding:4rem 5% 2rem}
       <div class="philosophy-icon">🧠</div>
       <h3>Mind</h3>
       <p>Mental clarity through mindfulness, meditation, and stress management techniques.</p>
+    </div>
+    <div class="philosophy-card">
+      <div class="philosophy-icon">😴</div>
+      <h3>Rest</h3>
+      <p>Deep, restorative sleep as the foundation of healing. Optimise your recovery and renewal cycle.</p>
     </div>
   </div>
 </section>
@@ -269,7 +299,7 @@ footer{background:var(--forest);color:var(--cream);padding:4rem 5% 2rem}
     <div class="service">
       <div class="service-icon">😴</div>
       <h3>Sleep Optimization</h3>
-      <p>Holistic strategies for deeper sleep, better recovery, and清晨 vitality.</p>
+      <p>Holistic strategies for deeper sleep, better recovery, and morning vitality.</p>
     </div>
     <div class="service">
       <div class="service-icon">🧬</div>
@@ -401,5 +431,10 @@ footer{background:var(--forest);color:var(--cream);padding:4rem 5% 2rem}
     <div>Portland, OR · Virtual Worldwide</div>
   </div>
 </footer>
+<script>
+function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.body.style.overflow='hidden'}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileNav()});
+</script>
 </body>
 </html>
