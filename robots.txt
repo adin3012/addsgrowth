@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /graphify-out/
 
 Sitemap: https://addsgrowth.org/sitemap.xml
