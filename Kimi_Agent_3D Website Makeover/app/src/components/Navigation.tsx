@@ -56,14 +56,9 @@ export default function Navigation() {
           <a
             href="#"
             onClick={(e) => { e.preventDefault(); scrollTo('#') }}
-            className="flex items-center"
+            className="font-sora font-bold text-lg text-[#e8e8e8] tracking-tight inline-flex items-baseline"
           >
-            <img
-              src="./addsgrowth-logo.jpg"
-              alt="AddsGrowth"
-              className="h-7 w-auto"
-              draggable={false}
-            />
+            AddsGrowth<span className="text-[#3d9970]">.</span>
           </a>
 
           <div className="hidden md:flex items-center gap-1">

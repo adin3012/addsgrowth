@@ -17,12 +17,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <img
-              src="./addsgrowth-logo.jpg"
-              alt="AddsGrowth"
-              className="h-8 w-auto mb-3"
-              draggable={false}
-            />
+            <div className="font-sora font-bold text-base text-[#e8e8e8] tracking-tight mb-3 inline-flex items-baseline">
+              AddsGrowth<span className="text-[#3d9970]">.</span>
+            </div>
             <p className="font-inter text-[13px] text-[#7a7a7a] leading-[1.7] max-w-[240px]">
               Custom websites that grow your business.
             </p>
