@@ -12,8 +12,8 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0c0a14;--purple:#7c3aed;--violet:#8b5cf6;--pink:#c084fc;--white:#fff;--gray:#a1a1aa;--dark:#16131f;--card:#1e1a2e}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);line-height:1.6}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);line-height:1.6;overflow-x:hidden}
 h1,h2,h3{font-family:'Outfit',sans-serif;font-weight:700}
 .container{max-width:1200px;margin:0 auto;padding:0 5%}
 a{text-decoration:none;color:inherit}
@@ -172,6 +172,7 @@ footer{background:var(--dark);padding:4rem 5% 2rem;border-top:1px solid rgba(124
   .hero-btns{justify-content:center}
   .hero-left p{margin-left:auto;margin-right:auto}
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .about-img{overflow:hidden;border-radius:16px}
   .services-grid,.testi-grid,.price-grid,.results-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
 }
