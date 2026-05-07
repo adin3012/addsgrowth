@@ -24,11 +24,11 @@ export default function Hero() {
       className="hero-section relative w-full min-h-[100dvh] flex items-center overflow-hidden"
       style={{ zIndex: 1 }}
     >
-      {/* Radial gradient for text readability */}
+      {/* Dark overlay behind text for readability */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 70% 80% at 25% 50%, rgba(5,5,5,0.7) 0%, rgba(5,5,5,0.3) 40%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 90% at 30% 50%, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.75) 35%, rgba(5,5,5,0.4) 60%, transparent 85%)',
         }}
       />
 
@@ -42,8 +42,8 @@ export default function Hero() {
 
         <h1
           ref={h1Ref}
-          className="font-sora font-extrabold text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.0] tracking-[-0.03em] text-[#e8e8e8] mb-6 opacity-0 translate-y-6"
-          style={{ textShadow: '0 2px 40px rgba(0,0,0,0.8), 0 0 80px rgba(5,5,5,0.6)' }}
+          className="font-sora font-extrabold text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.0] tracking-[-0.03em] text-[#f5f5f5] mb-6 opacity-0 translate-y-6"
+          style={{ textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 0 60px rgba(5,5,5,0.8), 0 0 120px rgba(5,5,5,0.5)' }}
         >
           Websites That
           <br />
@@ -54,7 +54,8 @@ export default function Hero() {
 
         <p
           ref={bodyRef}
-          className="font-inter text-base text-[#9a9a9a] leading-[1.7] max-w-[480px] mb-8 opacity-0 translate-y-4"
+          className="font-inter text-base text-[#c0c0c0] leading-[1.7] max-w-[480px] mb-8 opacity-0 translate-y-4"
+          style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}
         >
           Custom-built websites for coaches, agencies, and small businesses across the USA, UAE, India &amp; Australia. From $599. Live in 7 days.
         </p>
