@@ -1,5 +1,3 @@
-import Logo from '../components/Logo'
-
 export default function Footer() {
   const scrollTo = (href: string) => {
     if (href === '#') {
@@ -19,7 +17,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <Logo className="h-8 w-auto mb-3" />
+            <img
+              src="./addsgrowth-logo.jpg"
+              alt="AddsGrowth"
+              className="h-8 w-auto mb-3"
+              draggable={false}
+            />
             <p className="font-inter text-[13px] text-[#7a7a7a] leading-[1.7] max-w-[240px]">
               Custom websites that grow your business.
             </p>

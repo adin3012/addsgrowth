@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import Logo from './Logo'
 
 export default function Navigation() {
   const navRef = useRef<HTMLElement>(null)
@@ -59,7 +58,12 @@ export default function Navigation() {
             onClick={(e) => { e.preventDefault(); scrollTo('#') }}
             className="flex items-center"
           >
-            <Logo className="h-7 w-auto" />
+            <img
+              src="./addsgrowth-logo.jpg"
+              alt="AddsGrowth"
+              className="h-7 w-auto"
+              draggable={false}
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-1">
