@@ -47,11 +47,11 @@ export default function StarField() {
     varying float vAlpha;
     void main() {
       vec3 pos = position;
-      float twinkle = sin(uTime * 0.5 + pos.x * 10.0 + pos.y * 8.0) * 0.5 + 0.5;
+      float twinkle = sin(uTime * 0.08 + pos.x * 3.0 + pos.y * 2.5) * 0.5 + 0.5;
       vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
       gl_PointSize = aSize * (200.0 / -mvPosition.z);
       gl_Position = projectionMatrix * mvPosition;
-      vAlpha = 0.2 + twinkle * 0.6;
+      vAlpha = 0.35 + twinkle * 0.25;
     }
   `
 

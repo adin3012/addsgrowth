@@ -83,8 +83,8 @@ const wireframeFragmentShader = `
     float lightIntensity = dot(vNormal, lightDirection);
     lightIntensity = clamp(lightIntensity, 0.0, 1.0);
 
-    float flowIntensity = (sin((vPosition.x + vPosition.y + vPosition.z) * 8.0 + uTime * uPulseSpeed) + 1.0) * 0.5;
-    float flow2 = (sin((vPosition.x - vPosition.y + vPosition.z) * 6.0 + uTime * uPulseSpeed * 0.7) + 1.0) * 0.5;
+    float flowIntensity = (sin((vPosition.x + vPosition.y + vPosition.z) * 4.0 + uTime * uPulseSpeed * 0.3) + 1.0) * 0.5;
+    float flow2 = (sin((vPosition.x - vPosition.y + vPosition.z) * 3.0 + uTime * uPulseSpeed * 0.2) + 1.0) * 0.5;
 
     float d = min(min(vLineDistances.x, vLineDistances.y), vLineDistances.z);
     float lineAlpha = 1.0 - smoothstep(0.0, 1.2, d);
@@ -460,7 +460,7 @@ export default function IcosahedronSphere() {
     uTime: { value: 0.0 },
     uLineColor: { value: new THREE.Vector3(0.14, 0.55, 0.35) },
     uGlowColor: { value: new THREE.Vector3(0.35, 0.85, 0.55) },
-    uPulseSpeed: { value: 1.5 },
+    uPulseSpeed: { value: 0.6 },
   }), [scale])
 
   useFrame(() => {
@@ -491,9 +491,9 @@ export default function IcosahedronSphere() {
       {/* Post-processing Bloom */}
       <EffectComposer>
         <Bloom
-          intensity={1.2}
-          luminanceThreshold={0.1}
-          luminanceSmoothing={0.9}
+          intensity={0.7}
+          luminanceThreshold={0.15}
+          luminanceSmoothing={0.95}
           mipmapBlur
         />
       </EffectComposer>
