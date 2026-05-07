@@ -83,16 +83,12 @@ const wireframeFragmentShader = `
     float lightIntensity = dot(vNormal, lightDirection);
     lightIntensity = clamp(lightIntensity, 0.0, 1.0);
 
-    float flowIntensity = (sin((vPosition.x + vPosition.y + vPosition.z) * 4.0 + uTime * uPulseSpeed * 0.3) + 1.0) * 0.5;
-    float flow2 = (sin((vPosition.x - vPosition.y + vPosition.z) * 3.0 + uTime * uPulseSpeed * 0.2) + 1.0) * 0.5;
-
     float d = min(min(vLineDistances.x, vLineDistances.y), vLineDistances.z);
     float lineAlpha = 1.0 - smoothstep(0.0, 1.2, d);
 
-    float alpha = lineAlpha * (0.4 + (lightIntensity * 0.35) + (flowIntensity * 0.35) + (flow2 * 0.15));
+    float alpha = lineAlpha * (0.55 + (lightIntensity * 0.45));
 
-    vec3 finalColor = mix(uLineColor, uGlowColor, flowIntensity * 0.6);
-    finalColor += uGlowColor * flow2 * 0.3;
+    vec3 finalColor = uLineColor;
 
     gl_FragColor = vec4(finalColor, alpha);
   }
