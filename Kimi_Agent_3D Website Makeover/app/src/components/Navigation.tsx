@@ -56,9 +56,14 @@ export default function Navigation() {
           <a
             href="#"
             onClick={(e) => { e.preventDefault(); scrollTo('#') }}
-            className="font-sora font-bold text-lg text-[#e8e8e8] tracking-tight"
+            className="flex items-center"
           >
-            AddsGrowth
+            <img
+              src="./logo.svg"
+              alt="AddsGrowth"
+              className="h-7 w-auto"
+              draggable={false}
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-1">

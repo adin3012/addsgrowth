@@ -17,9 +17,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <div className="font-sora font-bold text-base text-[#e8e8e8] tracking-tight mb-3">
-              AddsGrowth
-            </div>
+            <img
+              src="./logo.svg"
+              alt="AddsGrowth"
+              className="h-8 w-auto mb-3"
+              draggable={false}
+            />
             <p className="font-inter text-[13px] text-[#7a7a7a] leading-[1.7] max-w-[240px]">
               Custom websites that grow your business.
             </p>
@@ -78,6 +81,8 @@ export default function Footer() {
               {[
                 { label: 'Instagram', href: 'https://www.instagram.com/addsgrowth?igsh=MTRpZDhyM3Bjb3RmbA%3D%3D&utm_source=qr' },
                 { label: 'Email', href: 'mailto:addsgrowth.co@gmail.com' },
+                { label: 'Phone', href: 'https://wa.me/918638740815' },
+                { label: 'Book a Call', href: 'https://calendly.com/adin3012/free-consultation' },
               ].map((item) => (
                 <li key={item.label}>
                   <a
