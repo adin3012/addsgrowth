@@ -75,7 +75,7 @@ export default function Contact() {
   }
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'addsgrowth.co@gmail.com', href: 'mailto:addsgrowth.co@gmail.com' },
+    { icon: Mail, label: 'Email', value: 'contact@addsgrowth.org', href: 'mailto:contact@addsgrowth.org' },
     { icon: Phone, label: 'Call/WhatsApp', value: '+91 86387 40815', href: 'https://wa.me/918638740815' },
     { icon: Calendar, label: 'Schedule', value: 'Book a Free Call', href: 'https://calendly.com/adin3012/free-consultation' },
   ]

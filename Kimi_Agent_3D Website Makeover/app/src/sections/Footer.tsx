@@ -80,7 +80,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5">
               {[
                 { label: 'Instagram', href: 'https://www.instagram.com/addsgrowth?igsh=MTRpZDhyM3Bjb3RmbA%3D%3D&utm_source=qr' },
-                { label: 'Email', href: 'mailto:addsgrowth.co@gmail.com' },
+                { label: 'Email', href: 'mailto:contact@addsgrowth.org' },
                 { label: 'Phone', href: 'https://wa.me/918638740815' },
                 { label: 'Book a Call', href: 'https://calendly.com/adin3012/free-consultation' },
               ].map((item) => (
